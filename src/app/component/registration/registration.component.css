@@ -1,0 +1,92 @@
+.wrapper{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.wrapper>:first-child{
+    width: 54%;
+    padding: 35px;
+}
+
+.flex-container-1{
+    display: flex;
+}
+
+.flex-container-1>:first-child{
+    width: 60%;
+    min-height: max-content;
+    display: grid;
+    justify-content: space-between;
+    /* grid-row-gap: 1em; */
+    grid-template-columns: 1fr 1fr;
+}
+
+.flex-container-1>:last-child{
+    width: 40%;
+    min-height: max-content;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.un-grid{
+    width: 200%;
+}
+
+.pass-grid{
+    grid-row: 4/5;
+}
+
+.con-grid{
+    grid-row: 4/5;
+}
+
+.pic{
+  width: 85%;
+}
+
+.bluef{
+    font-weight: bolder;
+    font-size: x-large;
+    color: #0606f8;
+}
+
+.redu{
+    color: #d10303;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.yellown{
+    font-weight: bolder;
+    font-size: x-large;
+    color: #f0b000;
+}
+
+.blued{
+    font-weight: bolder;
+    font-size: x-large;
+    color: #0606f8;
+}
+
+.greeno{
+    font-weight: bolder;
+    font-size: x-large;
+    color: #038803;
+}
+
+.redo{
+    font-weight: bolder;
+    font-size: x-large;
+    color: #d10303;
+}
+
+
+
+.reg-button{
+    background-color: rgb(70, 70, 228);
+    
+}

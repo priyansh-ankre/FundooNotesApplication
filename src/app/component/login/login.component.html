@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="wrapper">
+    <mat-card>
+        <div class="fundooWrapper">
+            <span class="bluef">F</span>
+            <span class="redu">u</span>
+            <span class="yellown">n</span>
+            <span class="blued">d</span>
+            <span class="greeno">o</span>
+            <span class="redo">o</span><br><br>
+            <p style="font-size: x-large;">Sign in</p>
+            <p class="char">Use you Fundoo Account</p>
+          </div><br>
+          <div class="flex-container">
+            <mat-form-field appearance="outline" [formGroup]="form">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput>
+                <mat-error *ngIf="form.get('email').hasError('required')">
+                  Email is required*
+                </mat-error>
+                <mat-error *ngIf="form.get('email').hasError('pattern')">
+                  invalid email*
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="fill" [formGroup]="form" >
+                <mat-label>Password</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+                <mat-error *ngIf="form.get('password').hasError('required')">
+                  Password is required*
+                </mat-error>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              </mat-form-field><br>
+              <button class="reg-button" mat-raised-button color="#0606f8;" (click)="submit()">Login</button>
+          </div>
+    </mat-card>
+</div>
