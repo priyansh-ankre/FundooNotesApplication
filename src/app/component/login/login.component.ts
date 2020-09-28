@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginInterface } from '../interface/login/login-interface';
+import { HttpserviceService } from '../services/httpServices/httpservice.service';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +11,11 @@ import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   hide = true;
-  form:FormGroup;
+  form: FormGroup;
 
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb: FormBuilder, private service: HttpserviceService) {
     this.form = this.fb.group({
-      email: ['', [Validators.email, Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      email: ['', [Validators.email, Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.pattern("^([a-zA-Z0-9])*[!@#$%^&*]{1}([a-zA-Z0-9])*$"), Validators.required]],
     })
   }
@@ -21,8 +23,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit() {
-    console.log(this.form.value);
-
+  login() {
+    this.service.doLogin(new LoginInterface(
+      this.form.get('email').value,
+      this.form.get('password').value
+    ));
   }
 }
