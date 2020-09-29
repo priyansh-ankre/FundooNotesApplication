@@ -1,3 +1,4 @@
+import { NoteInterface } from './../../interface/note/note-interface';
 import { LoginInterface } from './../../interface/login/login-interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,6 +12,7 @@ export class HttpserviceService {
 
   registerUrl="http://fundoonotes.incubation.bridgelabz.com/api/user/registerPushToken";
   loginUrl="http://fundoonotes.incubation.bridgelabz.com/api/user/login";
+  noteUrl="";
 
   constructor(private http:HttpClient) { }
   
@@ -26,5 +28,9 @@ export class HttpserviceService {
    */
   public doLogin(loginInterface:LoginInterface) {
     return this.http.post(this.loginUrl,loginInterface);
+  }
+
+  public addNote(noteInterface:NoteInterface){
+    return this.http.post(this.noteUrl,noteInterface);
   }
 }

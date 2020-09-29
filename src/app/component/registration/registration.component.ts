@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register() {
+  public register() {
     this.service.doRegistration(new RegistrationInterface(
       this.form.get('firstName').value,
       this.form.get('lastName').value,

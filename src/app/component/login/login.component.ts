@@ -23,10 +23,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login() {
-    this.service.doLogin(new LoginInterface(
+  public login() {
+     let response= this.service.doLogin(new LoginInterface(
       this.form.get('email').value,
       this.form.get('password').value
     ));
+      response.subscribe();
   }
 }

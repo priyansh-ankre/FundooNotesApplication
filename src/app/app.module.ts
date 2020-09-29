@@ -13,13 +13,20 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { DashboardsComponent } from './component/dashboards/dashboards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardsComponent
   ],
   imports: [
     MatInputModule,
@@ -32,7 +39,13 @@ import { HttpClientModule } from "@angular/common/http";
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
