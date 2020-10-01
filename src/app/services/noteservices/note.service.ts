@@ -2,14 +2,15 @@ import { Observable } from 'rxjs';
 import { NoteModel } from './../../model/note-model/note-model';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../httpservices/http.service';
+import { environment } from './../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoteService {
 
-  noteUrl:"http://fundoonotes.incubation.bridgelabz.com/api/notes/addNotes";
-  getNoteUrl:"http://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList";
+  noteUrl=environment.baseUrl+"notes/addNotes";
+  getNoteUrl=environment.baseUrl+"notes/getNotesList";
 
   constructor(private httpService:HttpService) { }
 
