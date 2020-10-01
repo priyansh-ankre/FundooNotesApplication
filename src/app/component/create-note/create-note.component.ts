@@ -48,6 +48,12 @@ export class CreateNoteComponent implements OnInit {
       this.form.get('reminder').value,
       this.form.get('collaberators').value
     ))
+    .subscribe((response)=>{
+      console.log(response);
+    },(error)=>{
+      console.log(error);
+      
+    })
   }
 
 }
