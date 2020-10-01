@@ -12,7 +12,10 @@ export class RegistrationComponent implements OnInit {
   hide = true;
   form: FormGroup;
   message: any;
-  constructor(private fb: FormBuilder, private service:UserService) {
+  constructor(
+    private fb: FormBuilder,
+    private service: UserService
+  ) {
     this.form = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -25,18 +28,22 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navigate() {
+
+  }
+
   public register() {
-      this.service.doRegistration(new RegistrationModel(
+    this.service.doRegistration(new RegistrationModel(
       this.form.get('firstName').value,
       this.form.get('lastName').value,
       this.form.get('Email').value,
       this.form.get('Password').value,
       this.form.get('cnfPass').value
     ))
-    .subscribe((response)=>{
+      .subscribe((response) => {
 
-    },(error)=>{
+      }, (error) => {
 
-    });
+      });
   }
 }
