@@ -62,26 +62,6 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content [ngStyle]="{'margin-left.px': contentMargin}">
-        <div style="padding-top: 15px;">
-            <form class="formWidth" *ngIf="switchBox==false" (click)="clickBox()">
-                <div class="dialogbox">
-                    <div>Take a note...</div>
-                    <div class="grid-icon">
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">brush</mat-icon>
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">list</mat-icon>
-                        <mat-icon aria-hidden="false" aria-label="Example home icon">image</mat-icon>
-                    </div>
-                </div>
-            </form>
-            <div style="display: flex;justify-content: center;">
-                <form class="example-form" *ngIf="switchBox==true" [formGroup]="form">
-                    <input type="text" placeholder="Title" class="tan" style="font-size: 1rem;" formControlName="title">
-                    <input type="text" placeholder="Take a note..." class="tan" formControlName="description">
-                    <div style="padding: 5px;">
-                        <button mat-button (click)="clickBox()" class="note-button">close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <app-create-note></app-create-note>
     </mat-sidenav-content>
 </mat-sidenav-container>
