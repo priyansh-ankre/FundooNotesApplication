@@ -9,30 +9,29 @@
             <span class="redo">o</span><br><br>
             <p style="font-size: x-large;">Sign in</p>
             <p class="char">Use your Fundoo Account</p>
-          </div><br>
-          <div class="flex-container">
+        </div><br>
+        <div class="flex-container">
             <mat-form-field appearance="outline" [formGroup]="form">
                 <mat-label>Email</mat-label>
                 <input formControlName="email" matInput>
                 <mat-error *ngIf="form.get('email').hasError('required')">
-                  Email is required*
+                    Email is required*
                 </mat-error>
                 <mat-error *ngIf="form.get('email').hasError('pattern')">
-                  invalid email*
+                    invalid email*
                 </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="fill" [formGroup]="form" >
+            </mat-form-field>
+            <mat-form-field appearance="fill" [formGroup]="form">
                 <mat-label>Password</mat-label>
                 <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
                 <mat-error *ngIf="form.get('password').hasError('required')">
-                  Password is required*
+                    Password is required*
                 </mat-error>
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-              </mat-form-field><br>
-              <button class="reg-button" mat-raised-button (click)="login()">Login</button>
-          </div>
+            </mat-form-field><br>
+            <button class="reg-button" mat-raised-button color="primary" (click)="login()">Login</button>
+        </div>
     </mat-card>
 </div>

@@ -1,7 +1,7 @@
+import { UserService } from './../../services/userservices/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginInterface } from '../interface/login/login-interface';
-import { HttpserviceService } from '../services/httpServices/httpservice.service';
+import { LoginModel } from 'src/app/model/login-model/login-model';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +13,12 @@ export class LoginComponent implements OnInit {
   hide = true;
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private service: HttpserviceService) {
+  constructor(private fb: FormBuilder,
+    private service: UserService) {
     this.form = this.fb.group({
       email: ['', [Validators.email, Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
       password: ['', [Validators.pattern("^([a-zA-Z0-9])*[!@#$%^&*]{1}([a-zA-Z0-9])*$"), Validators.required]],
+      cartId: ""
     })
   }
 
@@ -24,10 +26,17 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-     let response= this.service.doLogin(new LoginInterface(
+    this.service.doLogin(new LoginModel(
+      this.form.get('cartId').value,
       this.form.get('email').value,
       this.form.get('password').value
-    ));
-      response.subscribe();
+
+    ))
+      .subscribe((response) => {
+        console.log(response);
+      }, (error) => {
+        console.log(error);
+
+      });
   }
 }

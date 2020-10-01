@@ -1,21 +1,20 @@
-.wrapper{
+.wrapper {
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    
 }
 
-.wrapper>:first-child{
+.wrapper>:first-child {
     width: 54%;
     padding: 35px;
 }
 
-.flex-container-1{
+.flex-container-1 {
     display: flex;
 }
 
-.flex-container-1>:first-child{
+.flex-container-1>:first-child {
     width: 60%;
     min-height: max-content;
     display: grid;
@@ -24,7 +23,7 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.flex-container-1>:last-child{
+.flex-container-1>:last-child {
     width: 40%;
     min-height: max-content;
     display: flex;
@@ -32,65 +31,63 @@
     align-items: center;
 }
 
-.un-grid{
+.un-grid {
     width: 200%;
 }
 
-.pass-grid{
+.pass-grid {
     grid-row: 4/5;
 }
 
-.con-grid{
+.con-grid {
     grid-row: 4/5;
 }
 
-.pic{
-  width: 85%;
+.pic {
+    width: 85%;
 }
 
-.bluef{
+.bluef {
     font-weight: bolder;
     font-size: x-large;
     color: #0606f8;
 }
 
-.redu{
+.redu {
     color: #d10303;
     font-weight: bolder;
     font-size: x-large;
 }
 
-.yellown{
+.yellown {
     font-weight: bolder;
     font-size: x-large;
     color: #f0b000;
 }
 
-.blued{
+.blued {
     font-weight: bolder;
     font-size: x-large;
     color: #0606f8;
 }
 
-.greeno{
+.greeno {
     font-weight: bolder;
     font-size: x-large;
     color: #038803;
 }
 
-.redo{
+.redo {
     font-weight: bolder;
     font-size: x-large;
     color: #d10303;
 }
 
-
-
-.reg-button{
+.reg-button {
     background-color: rgb(70, 70, 228);
-    
 }
 
-
-
-
+.login-toggle {
+    margin-left: 16.8em;
+    color: blue;
+}

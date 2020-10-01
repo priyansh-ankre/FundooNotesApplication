@@ -19,14 +19,15 @@ import { MatListModule } from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { DashboardsComponent } from './component/dashboards/dashboards.component';
+import { DashboardsComponent } from './component/dashboards/dashboards.component' ;
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    DashboardsComponent
+    DashboardsComponent,
   ],
   imports: [
     MatInputModule,
@@ -46,6 +47,7 @@ import { DashboardsComponent } from './component/dashboards/dashboards.component
     MatSelectModule,
     MatSnackBarModule,
     MatExpansionModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

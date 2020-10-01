@@ -1,68 +1,66 @@
-.wrapper{
+.wrapper {
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    
 }
 
-.fundooWrapper{
+.fundooWrapper {
     text-align: center;
 }
 
-.wrapper>:first-child{
+.wrapper>:first-child {
     padding: 35px;
 }
 
-.bluef{
+.bluef {
     font-weight: bolder;
     font-size: x-large;
     color: #0606f8;
 }
 
-.redu{
+.redu {
     color: #d10303;
     font-weight: bolder;
     font-size: x-large;
 }
 
-.yellown{
+.yellown {
     font-weight: bolder;
     font-size: x-large;
     color: #f0b000;
 }
 
-.blued{
+.blued {
     font-weight: bolder;
     font-size: x-large;
     color: #0606f8;
 }
 
-.greeno{
+.greeno {
     font-weight: bolder;
     font-size: x-large;
     color: #038803;
 }
 
-.redo{
+.redo {
     font-weight: bolder;
     font-size: x-large;
     color: #d10303;
 }
 
-.char{
+.char {
     font-size: medium;
     opacity: 90%;
     padding-top: 8px;
 }
 
-.flex-container{
+.flex-container {
     display: flex;
     flex-direction: column;
 }
 
-.reg-button{
-    background-color: rgb(70, 70, 228);
+.reg-button {
     width: fit-content;
     align-self: center;
 }

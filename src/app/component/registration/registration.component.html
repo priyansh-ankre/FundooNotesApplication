@@ -3,92 +3,91 @@
 <head></head>
 
 <body>
-  <div class="wrapper">
-    <mat-card>
+    <div class="wrapper">
+        <mat-card>
 
-      <div class="fundooWrapper">
-        <span class="bluef">F</span>
-        <span class="redu">u</span>
-        <span class="yellown">n</span>
-        <span class="blued">d</span>
-        <span class="greeno">o</span>
-        <span class="redo">o</span><br><br>
-        <p style="font-size: large;">Create your Fundoo Account</p>
-      </div><br>
+            <div class="fundooWrapper">
+                <span class="bluef">F</span>
+                <span class="redu">u</span>
+                <span class="yellown">n</span>
+                <span class="blued">d</span>
+                <span class="greeno">o</span>
+                <span class="redo">o</span><br><br>
+                <p style="font-size: large;">Create your Fundoo Account</p>
+            </div><br>
 
-      <div class="flex-container-1">
-        <div>
-          <div>
-            <mat-form-field [formGroup]="form" appearance="outline">
-              <mat-label>First name</mat-label>
-              <input formControlName="firstName" matInput>
-              <mat-error *ngIf="form.get('firstName').hasError('required')">
-                First name is required*
-              </mat-error>
-              <!-- <mat-error *ngIf="form.get('firstName').errors.minlength">
+            <div class="flex-container-1">
+                <div>
+                    <div>
+                        <mat-form-field [formGroup]="form" appearance="outline">
+                            <mat-label>First name</mat-label>
+                            <input formControlName="firstName" matInput>
+                            <mat-error *ngIf="form.get('firstName').hasError('required')">
+                                First name is required*
+                            </mat-error>
+                            <!-- <mat-error *ngIf="form.get('firstName').errors.minlength">
                 First name must contain atleast 3 characters*
               </mat-error> -->
-            </mat-form-field>
-          </div>
-          <div>
-            <mat-form-field appearance="outline" [formGroup]="form">
-              <mat-label>Last name</mat-label>
-              <input formControlName="lastName" matInput>
-              <mat-error *ngIf="form.get('lastName').hasError('required')">
-                Last name is required*
-              </mat-error>
-              <!-- <mat-error *ngIf="form.get('lastName').errors.minlength">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline" [formGroup]="form">
+                            <mat-label>Last name</mat-label>
+                            <input formControlName="lastName" matInput>
+                            <mat-error *ngIf="form.get('lastName').hasError('required')">
+                                Last name is required*
+                            </mat-error>
+                            <!-- <mat-error *ngIf="form.get('lastName').errors.minlength">
                 Last name must contain atleast 3 characters*
               </mat-error> -->
-            </mat-form-field>
-          </div>
-          <div class="un-grid">
-            <mat-form-field appearance="outline" style="width: 96.5%;" [formGroup]="form">
-              <mat-label>Email</mat-label>
-              <input formControlName="Email" matInput>
-              <mat-error *ngIf="form.get('Email').hasError('required')">
-                Email is required*
-              </mat-error>
-              <mat-error *ngIf="form.get('Email').hasError('pattern')">
-                invalid email*
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <div class="pass-grid">
-            <mat-form-field appearance="fill" [formGroup]="form">
-              <mat-label>Password</mat-label>
-              <input formControlName="Password" matInput [type]="hide ? 'password' : 'text'">
-              <mat-error *ngIf="form.get('Password').hasError('required')">
-                Password is required*
-              </mat-error>
-              
-            </mat-form-field>
-          </div>
-          <div class="con-grid">
-            <mat-form-field style="width: 85%;" appearance="fill" [formGroup]="form">
-              <mat-label>Confirm</mat-label>
-              <input formControlName="cnfPass" matInput [type]="hide ? 'password' : 'text'">
-              <mat-error *ngIf="form.get('cnfPass').hasError('required')">
-                Confirm password is required*
-              </mat-error>
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
+                        </mat-form-field>
+                    </div>
+                    <div class="un-grid">
+                        <mat-form-field appearance="outline" style="width: 96.5%;" [formGroup]="form">
+                            <mat-label>Email</mat-label>
+                            <input formControlName="Email" matInput>
+                            <mat-error *ngIf="form.get('Email').hasError('required')">
+                                Email is required*
+                            </mat-error>
+                            <mat-error *ngIf="form.get('Email').hasError('pattern')">
+                                invalid email*
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="pass-grid">
+                        <mat-form-field appearance="fill" [formGroup]="form">
+                            <mat-label>Password</mat-label>
+                            <input formControlName="Password" matInput [type]="hide ? 'password' : 'text'">
+                            <mat-error *ngIf="form.get('Password').hasError('required')">
+                                Password is required*
+                            </mat-error>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="con-grid">
+                        <mat-form-field style="width: 85%;" appearance="fill" [formGroup]="form">
+                            <mat-label>Confirm</mat-label>
+                            <input formControlName="cnfPass" matInput [type]="hide ? 'password' : 'text'">
+                            <mat-error *ngIf="form.get('cnfPass').hasError('required')">
+                                Confirm password is required*
+                            </mat-error>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
-            </mat-form-field>
+                        </mat-form-field>
 
-          </div>
-        </div>
+                    </div>
+                </div>
 
 
-        <div>
-          <img class="pic" src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="picture">
-        </div>
-      </div>
-      <button class="reg-button" mat-raised-button color="#0606f8;" (click)="register()">Register</button>
-
-    </mat-card>
-  </div>
+                <div>
+                    <img class="pic" src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="picture">
+                </div>
+            </div>
+            <button class="reg-button" mat-raised-button color="primary" (click)="register()">Register</button>
+            <span class="login-toggle">Sign in instead</span>
+        </mat-card>
+    </div>
 </body>
 
 </html>

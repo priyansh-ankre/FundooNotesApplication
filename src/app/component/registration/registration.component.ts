@@ -1,7 +1,7 @@
+import { UserService } from './../../services/userservices/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RegistrationInterface } from '../interface/registration/registration-interface';
-import { HttpserviceService } from '../services/httpServices/httpservice.service';
+import { RegistrationModel } from 'src/app/model/registration-model/registration-model';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   hide = true;
   form: FormGroup;
   message: any;
-  constructor(private fb: FormBuilder, private service: HttpserviceService) {
+  constructor(private fb: FormBuilder, private service:UserService) {
     this.form = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -26,12 +26,17 @@ export class RegistrationComponent implements OnInit {
   }
 
   public register() {
-    this.service.doRegistration(new RegistrationInterface(
+      this.service.doRegistration(new RegistrationModel(
       this.form.get('firstName').value,
       this.form.get('lastName').value,
       this.form.get('Email').value,
       this.form.get('Password').value,
       this.form.get('cnfPass').value
-    ));
+    ))
+    .subscribe((response)=>{
+
+    },(error)=>{
+
+    });
   }
 }
