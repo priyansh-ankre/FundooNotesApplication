@@ -31,7 +31,7 @@
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
             </mat-form-field><br>
-            <button class="reg-button" mat-raised-button color="primary" (click)="login()">Login</button>
+            <button class="reg-button" mat-raised-button color="primary" [disabled]="!form.valid" (click)="login()">Login</button>
         </div>
     </mat-card>
 </div>

@@ -84,7 +84,7 @@
                     <img class="pic" src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="picture">
                 </div>
             </div>
-            <button class="reg-button" mat-raised-button color="primary" (click)="register()">Register</button>
+            <button class="reg-button" mat-raised-button color="primary" [disabled]="!form.valid" (click)="register()">Register</button>
             <span class="login-toggle">Sign in instead</span>
         </mat-card>
     </div>
