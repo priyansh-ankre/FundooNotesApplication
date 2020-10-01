@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { NoteModel } from './../../model/note-model/note-model';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../httpservices/http.service';
@@ -12,11 +13,11 @@ export class NoteService {
 
   constructor(private httpService:HttpService) { }
 
-  public addNote(note:NoteModel){
+  public addNote(note:NoteModel):Observable<any>{
     return this.httpService.post(this.noteUrl,note);
   }
 
-  public getNote(note:NoteModel){
+  public getNote(note:NoteModel):Observable<any>{
     return this.httpService.get(this.getNoteUrl,note);
   }
 }
