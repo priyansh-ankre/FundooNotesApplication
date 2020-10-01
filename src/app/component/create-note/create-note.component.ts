@@ -21,11 +21,11 @@ export class CreateNoteComponent implements OnInit {
       title: '',
       description: '',
       isPinned: false,
-      color: '',
+      color:'#FFFFFF',
       isArchived: false,
-      labelIdList: [],
-      reminder: Date,
-      collaberators: []
+      labelIdList: [[]],
+      reminder: [[]],
+      collaberators: [[]]
     })
   }
 
@@ -33,6 +33,10 @@ export class CreateNoteComponent implements OnInit {
   }
 
   clickBox() {
+    this.switchBox = !this.switchBox;
+  }
+
+  clickBox_() {
     this.switchBox = !this.switchBox;
     this.addNote();
   }
