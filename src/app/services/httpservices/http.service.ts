@@ -34,4 +34,13 @@ export class HttpService {
     return this.https.post(url, note, httpOption);
   }
 
+  getNotes(url: string): Observable<any> {
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      }),
+    };
+    return this.https.get(url, httpOption);
+  }
 }
