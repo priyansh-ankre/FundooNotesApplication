@@ -14,8 +14,8 @@ export class NoteService {
 
   constructor(private httpService:HttpService) { }
 
-  public addNote(note:NoteModel):Observable<any>{
-    return this.httpService.post(this.noteUrl,note);
+  addNote(note: Object) {
+    return this.httpService.postNote('notes/addNotes', note);
   }
 
   public getNote(note:NoteModel):Observable<any>{
