@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     ))
       .subscribe((response) => {
         console.log(response);
+        localStorage.setItem("token", response.jwtToken);
       }, (error) => {
         console.log(error);
 

@@ -1,12 +1,12 @@
 export class NoteModel {
     constructor(
-        private title: String,
-        private description: String,
-        private isPinned: false,
-        private color,
-        private isArchived: false,
+        private title: string,
+        private description: string,
+        private isPinned: boolean,
+        private color: string,
+        private isArchived: boolean,
         private labelIdList: [],
-        private reminder,
+        private reminder:[],
         private collaberators: []
     ) {
     }

@@ -14,11 +14,11 @@ export class NoteService {
 
   constructor(private httpService:HttpService) { }
 
-  addNote(note: Object) {
-    return this.httpService.postNote('notes/addNotes', note);
+  addNote(note: NoteModel):Observable<any> {
+    return this.httpService.postNote(this.noteUrl, note);
   }
 
-  getNote() {
-    return this.httpService.getNotes(`notes/getNotesList`);
+  getNote():Observable<any> {
+    return this.httpService.getNotes(this.getNoteUrl);
   }
 }
