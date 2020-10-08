@@ -2,6 +2,7 @@ import { UserService } from './../../services/userservices/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginModel } from 'src/app/model/login-model/login-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private service: UserService
+    private service: UserService,
+    private rout:Router
   ) {
     this.form = this.fb.group({
       email: ['', [Validators.email, Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         localStorage.setItem("token", response.jwtToken);
+        this.rout.navigate(['/dashboard']);
       }, (error) => {
         console.log(error);
 
