@@ -23,12 +23,14 @@
                 <mat-icon>{{refreshVeiw}}</mat-icon>
             </button>
             <button (click)="circleClose()" mat-icon-button>
-            <mat-icon>circle</mat-icon>
-            <mat-card *ngIf="accCircle==true" class="account">
-                <mat-card-header></mat-card-header>
-                <mat-divider></mat-divider>
-                <div>
-                    <button class="signout">sign Out</button>
+                <mat-icon>circle</mat-icon>
+                <mat-card *ngIf="accCircle==true" class="account">
+                    <mat-card-header></mat-card-header>
+                    <mat-divider></mat-divider>
+                    <div>
+                        <button class="signout" (click)="signout()">
+                            sign Out
+                        </button>
 </div>
 </mat-card>
 </button>
