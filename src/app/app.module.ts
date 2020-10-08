@@ -23,6 +23,7 @@ import { DashboardsComponent } from './component/dashboards/dashboards.component
 import {MatDialogModule} from '@angular/material/dialog';
 import { CreateNoteComponent } from './component/create-note/create-note.component';
 import { DisplayNoteComponent } from './component/display-note/display-note.component';
+import { NoteComponent } from './component/note/note.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DisplayNoteComponent } from './component/display-note/display-note.comp
     DashboardsComponent,
     CreateNoteComponent,
     DisplayNoteComponent,
+    NoteComponent,
   ],
   imports: [
     MatInputModule,
