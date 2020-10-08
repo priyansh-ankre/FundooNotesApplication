@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayNoteComponent implements OnInit {
 
-  data: any[]
+  noteData: any[]
 
   constructor(private noteService: NoteService) { }
 
@@ -19,8 +19,8 @@ export class DisplayNoteComponent implements OnInit {
   getNotes() {
     this.noteService.getNote()
       .subscribe((response) => {
-        this.data = response['body']
-        console.log('info', this.data);
+        this.noteData = response.data.data;
+        console.log('info', this.noteData);
       }, (error) => {
         console.log('error', error);
       })

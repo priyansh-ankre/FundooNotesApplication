@@ -10,6 +10,7 @@ export class NoteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

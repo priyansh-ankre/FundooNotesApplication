@@ -1,15 +1,19 @@
-.mat-display {
+.mat-display-container {
     display: flex;
-    width: 23rem;
-    height: auto;
     flex-direction: row-reverse;
+    justify-content: space-between;
     flex-wrap: wrap;
-    padding-top: 1cm;
+    gap: 1rem;
+    row-gap: 2px;
+    width: 60%;
+    margin: auto;
 }
 
-.abc {
-    display: flex;
-    flex-direction: row;
+.mat-display {
+    min-width: 8rem;
+    min-height: 8rem;
+    padding-top: 1cm;
+    text-align: center;
 }
 
 mat-card {
@@ -18,27 +22,4 @@ mat-card {
     margin-right: 0;
     flex-direction: row-reverse;
     box-shadow: 2px 3px 4px bisque;
-}
-
-.note-icon {
-    display: flex;
-    justify-content: space-around;
-}
-
-.pin {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 17em;
-    visibility: visible;
-}
-
-.pin-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.colorsList {
-    width: 50px;
 }

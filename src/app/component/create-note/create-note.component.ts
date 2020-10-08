@@ -1,3 +1,4 @@
+import { DisplayNoteComponent } from './../display-note/display-note.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { NoteModel } from 'src/app/model/note-model/note-model';
@@ -14,6 +15,7 @@ export class CreateNoteComponent implements OnInit {
   form: FormGroup;
   title = new FormControl('');
   description = new FormControl('');
+  displayNotes:DisplayNoteComponent;
 
   constructor(
     private service: NoteService,
@@ -45,15 +47,6 @@ export class CreateNoteComponent implements OnInit {
   }
 
   addNote() {
-    // const formData = new FormData;
-    // formData.append('title', this.form.get('title').value);
-    // formData.append('description', this.form.get('description').value);
-    // formData.append('isPinned', this.form.get('isPinned').value);
-    // formData.append('color', this.form.get('color').value);
-    // formData.append('isArchived', this.form.get('isArchived').value);
-    // formData.append('labelIdList', this.form.get('labelIdList').value);
-    // formData.append('reminder', this.form.get('reminder').value);
-    // formData.append('collaberators', this.form.get('collaberators').value);
     let addNoteData = {
       title: this.title.value,
       description: this.description.value

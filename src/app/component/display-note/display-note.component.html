@@ -1,14 +1,16 @@
-<div *ngFor="let item of data" class="mat-display">
-    <mat-card [ngStyle]="{'background-color':item.color}" style="word-wrap: normal; width:70%;box-shadow: 2px 3px 4px bisque;">
-        <div class="mat-title">
-            <mat-card-title style="font-family:  monospace;">
-                {{item.title}}
-            </mat-card-title>
-        </div>
-        <div class="mat-desc">
-            <mat-card-content>
-                {{item.description}}
-            </mat-card-content>
-        </div>
-    </mat-card>
+<div class="mat-display-container">
+    <div *ngFor="let item of noteData" class="mat-display">
+        <mat-card>
+            <div class="mat-title">
+                <mat-card-title>
+                    {{item.title}}
+                </mat-card-title>
+            </div>
+            <div class="mat-desc">
+                <mat-card-content>
+                    {{item.description}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
 </div>
