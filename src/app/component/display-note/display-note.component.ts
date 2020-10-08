@@ -8,18 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayNoteComponent implements OnInit {
 
-  constructor(private noteService:NoteService) { }
+  data: any[]
+
+  constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
     this.getNotes();
   }
 
-  getNotes(){
+  getNotes() {
     this.noteService.getNote()
-    .subscribe((response)=>{
-      console.log('info',response['body']);
-    },(error)=>{
-      console.log('error',error);
-    })
+      .subscribe((response) => {
+        this.data = response['body']
+        console.log('info', this.data);
+      }, (error) => {
+        console.log('error', error);
+      })
   }
 }
