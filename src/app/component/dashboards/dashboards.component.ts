@@ -17,11 +17,10 @@ export class DashboardsComponent implements OnInit {
   refreshValue = false;
   refreshVeiw = "refresh";
   viewTitle = false;
+  accCircle=false;
 
   constructor(
     public dialog: MatDialog,
-    private service: NoteService,
-    private fb: FormBuilder
   ) {
 
   }
@@ -51,7 +50,9 @@ export class DashboardsComponent implements OnInit {
     }
   }
 
-
+  circleClose(){
+    this.accCircle=!this.accCircle;
+  }
 
 
 }
