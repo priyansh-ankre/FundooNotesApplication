@@ -1,3 +1,4 @@
+import { NoteService } from 'src/app/services/noteservices/note.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayNoteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private noteService:NoteService) { }
 
   ngOnInit(): void {
   }
 
+  getNotes(){
+    this.noteService.getNote()
+    .subscribe((response)=>{
+      console.log('info',response['body']);
+    },(error)=>{
+      console.log('error',error);
+    })
+  }
 }
