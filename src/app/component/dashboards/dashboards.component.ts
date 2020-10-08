@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { NoteModel } from 'src/app/model/note-model/note-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboards',
@@ -21,6 +22,7 @@ export class DashboardsComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
+    private rout:Router
   ) {
 
   }
@@ -54,6 +56,9 @@ export class DashboardsComponent implements OnInit {
     this.accCircle=!this.accCircle;
   }
 
+  signout(){
+    this.rout.navigate(['/login']);
+  }
 
 }
 
