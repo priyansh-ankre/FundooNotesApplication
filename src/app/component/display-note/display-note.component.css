@@ -1,0 +1,44 @@
+.mat-display {
+    display: flex;
+    width: 23rem;
+    height: auto;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    padding-top: 1cm;
+}
+
+.abc {
+    display: flex;
+    flex-direction: row;
+}
+
+mat-card {
+    border-radius: 15px;
+    border: 1px solid transparent;
+    margin-right: 0;
+    flex-direction: row-reverse;
+    box-shadow: 2px 3px 4px bisque;
+}
+
+.note-icon {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pin {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 17em;
+    visibility: visible;
+}
+
+.pin-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.colorsList {
+    width: 50px;
+}
