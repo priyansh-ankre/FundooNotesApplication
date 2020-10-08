@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private service: UserService,
-    private rout:Router
+    private userService: UserService,
+    private route:Router
   ) {
     this.form = this.fb.group({
       email: ['', [Validators.email, Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -30,15 +30,15 @@ export class LoginComponent implements OnInit {
   }
 
   public login() {
-    this.service.doLogin(new LoginModel(
+    this.userService.doLogin(new LoginModel(
       this.form.get('cartId').value,
       this.form.get('email').value,
       this.form.get('password').value
     ))
       .subscribe((response) => {
         console.log(response);
-        localStorage.setItem("token", response.jwtToken);
-        this.rout.navigate(['/dashboard']);
+        localStorage.setItem("token", response.id);
+        this.route.navigate(['/dashboard']);
       }, (error) => {
         console.log(error);
 
