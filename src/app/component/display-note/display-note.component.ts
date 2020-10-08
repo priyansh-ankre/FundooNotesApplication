@@ -11,6 +11,7 @@ export class DisplayNoteComponent implements OnInit {
   constructor(private noteService:NoteService) { }
 
   ngOnInit(): void {
+    this.getNotes();
   }
 
   getNotes(){
