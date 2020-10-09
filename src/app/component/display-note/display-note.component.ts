@@ -1,28 +1,20 @@
-import { NoteService } from 'src/app/services/noteservices/note.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NoteComponent } from '../note/note.component';
 
 @Component({
   selector: 'app-display-note',
   templateUrl: './display-note.component.html',
   styleUrls: ['./display-note.component.css']
 })
-export class DisplayNoteComponent implements OnInit {
+export class DisplayNoteComponent {
 
-  noteData: any[]
-
-  constructor(private noteService: NoteService) { }
+  @Input() noteData: any[];
+  
+  constructor(private note: NoteComponent) { }
 
   ngOnInit(): void {
-    this.getNotes();
+    this.note.getNotes();
   }
+  
 
-  getNotes() {
-    this.noteService.getNote()
-      .subscribe((response) => {
-        this.noteData = response.data.data;
-        console.log('info', this.noteData);
-      }, (error) => {
-        console.log('error', error);
-      })
-  }
 }
