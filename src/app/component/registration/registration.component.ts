@@ -19,9 +19,9 @@ export class RegistrationComponent implements OnInit {
     this.form = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      service:[''],
-      Email: ['', [Validators.email, Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      Password: ['', [Validators.pattern("^([a-zA-Z0-9])*[!@#$%^&*]{1}([a-zA-Z0-9])*$"), Validators.required]],
+      service:['advance'],
+      email: ['', [Validators.email, Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.pattern("^([a-zA-Z0-9])*[!@#$%^&*]{1}([a-zA-Z0-9])*$"), Validators.required]],
       cnfPass: ['', [Validators.pattern("^([a-zA-Z0-9])*[!@#$%^&*]{1}([a-zA-Z0-9])*$"), Validators.required]],
       cartId:['']
     })
@@ -36,15 +36,15 @@ export class RegistrationComponent implements OnInit {
 
   public register() {
     this.service.doRegistration(new RegistrationModel(
+      this.form.get('cartId').value,
+      this.form.get('email').value,
       this.form.get('firstName').value,
       this.form.get('lastName').value,
+      this.form.get('password').value,
       this.form.get('service').value,
-      this.form.get('Email').value,
-      this.form.get('Password').value,
-      this.form.get('cartId').value
     ))
       .subscribe((response) => {
-
+        
       }, (error) => {
 
       });

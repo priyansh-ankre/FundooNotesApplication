@@ -10,7 +10,7 @@ import { LoginModel } from 'src/app/model/login-model/login-model';
 })
 export class UserService {
 
-  registerUrl = environment.baseUrl + "user/registerPushToken";
+  registerUrl = environment.baseUrl + "user/userSignUp";
   loginUrl = environment.baseUrl + "user/login";
 
   constructor(private httpService: HttpService) { }
