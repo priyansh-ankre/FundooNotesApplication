@@ -29,6 +29,7 @@ import { ArchiveComponent } from './component/archive/archive.component';
 import { LabelComponent } from './component/label/label.component';
 import { TrashComponent } from './component/trash/trash.component';
 import { RemindersIconComponent } from './component/reminders-icon/reminders-icon.component';
+import { ArchiveIconComponent } from './component/archive-icon/archive-icon.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { RemindersIconComponent } from './component/reminders-icon/reminders-ico
     LabelComponent,
     TrashComponent,
     RemindersIconComponent,
+    ArchiveIconComponent,
   ],
   imports: [
     MatInputModule,
