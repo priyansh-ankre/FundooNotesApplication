@@ -12,7 +12,7 @@
 .mat-display {
     width: 214px;
     min-height: 8rem;
-    text-align: center;
+    text-align: left;
 }
 
 mat-card {
