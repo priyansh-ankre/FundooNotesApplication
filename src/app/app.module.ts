@@ -24,6 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { CreateNoteComponent } from './component/create-note/create-note.component';
 import { DisplayNoteComponent } from './component/display-note/display-note.component';
 import { NoteComponent } from './component/note/note.component';
+import { RemindersComponent } from './component/reminders/reminders.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NoteComponent } from './component/note/note.component';
     CreateNoteComponent,
     DisplayNoteComponent,
     NoteComponent,
+    RemindersComponent,
   ],
   imports: [
     MatInputModule,
