@@ -27,6 +27,7 @@ import { NoteComponent } from './component/note/note.component';
 import { RemindersComponent } from './component/reminders/reminders.component';
 import { ArchiveComponent } from './component/archive/archive.component';
 import { LabelComponent } from './component/label/label.component';
+import { TrashComponent } from './component/trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { LabelComponent } from './component/label/label.component';
     RemindersComponent,
     ArchiveComponent,
     LabelComponent,
+    TrashComponent,
   ],
   imports: [
     MatInputModule,
