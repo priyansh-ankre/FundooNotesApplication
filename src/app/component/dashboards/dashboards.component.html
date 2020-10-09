@@ -61,7 +61,7 @@
                 <mat-icon>create</mat-icon>
             </button><button mat-button (click)="onToolBarToggle()">Edite labels</button>
         </div><br>
-        <div class="shadow" fxLayout="row">
+        <div class="shadow" fxLayout="row" [routerLink]="['../archive']">
             <button mat-icon-button (click)="onToolBarToggle()">
                 <mat-icon>archive</mat-icon>
             </button><button mat-button (click)="onToolBarToggle()">Archive</button>
