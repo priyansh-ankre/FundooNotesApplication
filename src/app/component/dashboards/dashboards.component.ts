@@ -15,8 +15,6 @@ export class DashboardsComponent implements OnInit {
   isMenuOpen = false;
   contentMargin = 0;
   viewClick = true;
-  refreshValue = false;
-  refreshVeiw = "refresh";
   viewTitle = false;
   accCircle=false;
 
@@ -39,16 +37,6 @@ export class DashboardsComponent implements OnInit {
     }
     else {
       this.contentMargin = 280;
-    }
-  }
-
-  refresh(): String {
-    this.refreshValue = !this.refreshValue;
-    if (this.refreshValue) {
-      window.location.reload();
-      return this.refreshVeiw = "cloud_done";
-    } else {
-      return this.refreshVeiw;
     }
   }
 
