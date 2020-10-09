@@ -25,6 +25,7 @@ import { CreateNoteComponent } from './component/create-note/create-note.compone
 import { DisplayNoteComponent } from './component/display-note/display-note.component';
 import { NoteComponent } from './component/note/note.component';
 import { RemindersComponent } from './component/reminders/reminders.component';
+import { ArchiveComponent } from './component/archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { RemindersComponent } from './component/reminders/reminders.component';
     DisplayNoteComponent,
     NoteComponent,
     RemindersComponent,
+    ArchiveComponent,
   ],
   imports: [
     MatInputModule,
