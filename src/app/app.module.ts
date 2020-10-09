@@ -30,6 +30,7 @@ import { LabelComponent } from './component/label/label.component';
 import { TrashComponent } from './component/trash/trash.component';
 import { RemindersIconComponent } from './component/reminders-icon/reminders-icon.component';
 import { ArchiveIconComponent } from './component/archive-icon/archive-icon.component';
+import { DeleteIconComponent } from './component/delete-icon/delete-icon.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ArchiveIconComponent } from './component/archive-icon/archive-icon.comp
     TrashComponent,
     RemindersIconComponent,
     ArchiveIconComponent,
+    DeleteIconComponent,
   ],
   imports: [
     MatInputModule,
