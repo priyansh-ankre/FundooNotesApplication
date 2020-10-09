@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         localStorage.setItem("token", response.id);
+        localStorage.setItem("email",response.email);
         this.route.navigate(['/dashboard']);
       }, (error) => {
         console.log(error);

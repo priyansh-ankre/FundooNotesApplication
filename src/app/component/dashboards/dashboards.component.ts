@@ -17,6 +17,7 @@ export class DashboardsComponent implements OnInit {
   viewClick = true;
   viewTitle = false;
   accCircle=false;
+  accEmail=localStorage.getItem("email");
 
   constructor(
     public dialog: MatDialog,
