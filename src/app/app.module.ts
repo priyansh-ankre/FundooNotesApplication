@@ -31,7 +31,7 @@ import { TrashComponent } from './component/trash/trash.component';
 import { RemindersIconComponent } from './component/reminders-icon/reminders-icon.component';
 import { ArchiveIconComponent } from './component/archive-icon/archive-icon.component';
 import { DeleteIconComponent } from './component/delete-icon/delete-icon.component';
-import { ColorPalleteComponent } from './component/color-pallete/color-pallete.component';
+import { ColorPalleteComponent } from './component/color-pallete-icon/color-pallete.component';
 
 @NgModule({
   declarations: [
