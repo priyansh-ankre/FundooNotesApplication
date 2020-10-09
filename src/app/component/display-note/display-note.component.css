@@ -11,7 +11,7 @@
 
 .mat-display {
     width: 214px;
-    min-height: 8rem;
+    min-height: 10rem;
     text-align: left;
 }
 
@@ -19,4 +19,9 @@ mat-card {
     border-radius: 5px;
     border: 1px solid #e0e0e0;
     box-shadow: 2px 3px 4px bisque;
+}
+
+.note-icon {
+    display: flex;
+    justify-content: space-between;
 }
