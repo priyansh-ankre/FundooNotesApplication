@@ -16,9 +16,7 @@
 }
 
 mat-card {
-    border-radius: 15px;
-    /* border: 1px solid transparent; */
-    /* margin-right: 0; */
-    /* flex-direction: row-reverse; */
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
     box-shadow: 2px 3px 4px bisque;
 }
