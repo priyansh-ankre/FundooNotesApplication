@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteIconComponent implements OnInit {
 
+  deleteNote: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  moreClick(){
+    this.deleteNote=!this.deleteNote;
   }
 
 }

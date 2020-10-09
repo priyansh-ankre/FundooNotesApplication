@@ -1,6 +1,13 @@
 button {
     min-width: 0px;
-    padding: 0px 0px;
+    padding: 5px;
     line-height: 0px;
     float: right;
+    border-radius: 50%;
+}
+
+mat-card {
+    position: absolute;
+    left: 7px;
+    z-index: 1;
 }
