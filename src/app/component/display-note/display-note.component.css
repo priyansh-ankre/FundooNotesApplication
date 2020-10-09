@@ -1,25 +1,24 @@
 .mat-display-container {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1rem;
-    row-gap: 2px;
-    width: 60%;
+    gap: 5px;
+    width: 55%;
     margin: auto;
+    padding-top: 1cm;
 }
 
 .mat-display {
-    min-width: 8rem;
+    width: 214px;
     min-height: 8rem;
-    padding-top: 1cm;
     text-align: center;
 }
 
 mat-card {
     border-radius: 15px;
-    border: 1px solid transparent;
-    margin-right: 0;
-    flex-direction: row-reverse;
+    /* border: 1px solid transparent; */
+    /* margin-right: 0; */
+    /* flex-direction: row-reverse; */
     box-shadow: 2px 3px 4px bisque;
 }

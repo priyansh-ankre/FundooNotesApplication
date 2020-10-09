@@ -1,5 +1,5 @@
 <div class="mat-display-container">
-    <div *ngFor="let item of noteData" class="mat-display">
+    <div *ngFor="let item of noteData.slice().reverse()" class="mat-display">
         <mat-card>
             <div class="mat-title">
                 <mat-card-title>
