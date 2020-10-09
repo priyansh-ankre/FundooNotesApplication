@@ -1,5 +1,5 @@
 import { DisplayNoteComponent } from './../display-note/display-note.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { NoteModel } from 'src/app/model/note-model/note-model';
 import { NoteService } from 'src/app/services/noteservices/note.service';
@@ -15,7 +15,8 @@ export class CreateNoteComponent implements OnInit {
   form: FormGroup;
   title = new FormControl('');
   description = new FormControl('');
-  displayNotes:DisplayNoteComponent;
+  displayNotes: DisplayNoteComponent;
+  @Output() getNotes: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private service: NoteService,
@@ -23,16 +24,6 @@ export class CreateNoteComponent implements OnInit {
   ) {
 
   }
-
-
-
-
-  // isPinned=new FormControl(false);
-  // color=new FormControl('#FFFFFF');
-  // isArchived=new FormControl(false);
-  // labelIdList=new FormControl([]);
-  // reminder=new FormControl([]);
-  // collaberators=new FormControl([]);
 
   ngOnInit(): void {
   }
@@ -53,6 +44,7 @@ export class CreateNoteComponent implements OnInit {
     }
     this.service.addNote(addNoteData)
       .subscribe((response) => {
+        this.getNotes.emit();
         console.log(response);
       }, (error) => {
         console.log(error);

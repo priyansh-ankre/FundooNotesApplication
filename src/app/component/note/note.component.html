@@ -1,5 +1,5 @@
 <div>
-    <app-create-note></app-create-note>
+    <app-create-note (getNotes)="getNotes()"></app-create-note>
 </div>
 <div fxLayoutGap="10px" fxLayout="column">
     <app-display-note [noteData]="noteData"></app-display-note>
