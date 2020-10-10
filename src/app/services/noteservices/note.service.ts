@@ -10,6 +10,7 @@ export class NoteService {
 
   noteUrl=environment.baseUrl+"notes/addNotes";
   getNoteUrl=environment.baseUrl+"notes/getNotesList";
+  getArchivedNoteUrl=environment.baseUrl+"notes/getArchiveNotesList";
 
   constructor(private httpService:HttpService) { }
 
@@ -19,5 +20,9 @@ export class NoteService {
 
   getNote():Observable<any> {
     return this.httpService.getNotes(this.getNoteUrl);
+  }
+
+  getArchivedNote():Observable<any>{
+    return this.httpService.getNotes(this.getArchivedNoteUrl);
   }
 }
