@@ -69,7 +69,7 @@
         <div class="shadow" fxLayout="row">
             <button mat-icon-button (click)="onToolBarToggle()">
                 <mat-icon>delete_outline</mat-icon>
-            </button><button mat-button (click)="onToolBarToggle()">Trash</button>
+            </button><button mat-button (click)="onToolBarToggle()" routerLink="./trash">Trash</button>
         </div>
     </mat-sidenav>
     <mat-sidenav-content [ngStyle]="{'margin-left.px': contentMargin}">
