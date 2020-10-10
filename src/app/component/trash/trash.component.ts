@@ -1,3 +1,4 @@
+import { NoteService } from 'src/app/services/noteservices/note.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrashComponent implements OnInit {
 
-  constructor() { }
+  trashNoteData:any[];
+
+  constructor(private noteService:NoteService) { }
 
   ngOnInit(): void {
+    this.getTrashNotes();
   }
 
+  getTrashNotes(){
+    this.noteService.getTrashNote()
+    .subscribe((response)=>{
+      this.trashNoteData=response.data.data;
+      console.log(response);
+    },(error)=>{
+      console.log(error);
+    })
+  }
 }

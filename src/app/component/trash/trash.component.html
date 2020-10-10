@@ -1,1 +1,30 @@
-<p>trash works!</p>
+<div class="mat-display-container">
+    <div *ngFor="let item of trashNoteData.slice().reverse()" class="mat-display">
+        <mat-card>
+            <div class="mat-title">
+                <mat-card-title>
+                    {{item.title}}
+                </mat-card-title>
+            </div>
+            <div class="mat-desc">
+                <mat-card-content>
+                    {{item.description}}
+                </mat-card-content>
+                <div class="note-icon">
+                    <div>
+                        <app-reminders-icon></app-reminders-icon>
+                    </div>
+                    <div>
+                        <app-archive-icon></app-archive-icon>
+                    </div>
+                    <div>
+                        <app-color-pallete></app-color-pallete>
+                    </div>
+                    <div>
+                        <app-delete-icon></app-delete-icon>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
