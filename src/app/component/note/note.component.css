@@ -1,0 +1,15 @@
+.mat-display-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 55%;
+    margin: auto;
+    padding-top: 1cm;
+}
+
+.mat-display {
+    width: 214px;
+    text-align: left;
+}

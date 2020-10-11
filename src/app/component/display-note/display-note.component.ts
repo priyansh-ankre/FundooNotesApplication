@@ -8,7 +8,7 @@ import { NoteComponent } from '../note/note.component';
 })
 export class DisplayNoteComponent {
 
-  @Input() noteData: any[];
+  @Input() noteData: any;
   
   constructor(private note: NoteComponent) { }
 
