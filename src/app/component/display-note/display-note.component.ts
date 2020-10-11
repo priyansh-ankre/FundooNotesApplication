@@ -17,7 +17,6 @@ export class DisplayNoteComponent {
 
   ngOnInit(): void {
     this.note.getNotes();
-    this.getNotes.emit();
   }
   
 
