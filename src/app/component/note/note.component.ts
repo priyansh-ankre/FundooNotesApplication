@@ -20,6 +20,10 @@ export class NoteComponent implements OnInit {
     this.noteService.getNote()
       .subscribe((response) => {
         this.noteData = response.data.data;
+        let notes=this.noteData.filter((element)=>{
+          return element.isArchived===false && element.isDeleted===false;
+        })
+        this.noteData=notes
         console.log('info', this.noteData);
       }, (error) => {
         console.log('error', error);
