@@ -23,7 +23,8 @@ export class NoteComponent implements OnInit {
         let notes=this.noteData.filter((element)=>{
           return element.isArchived===false && element.isDeleted===false;
         })
-        this.noteData=notes
+        this.noteData=notes;
+        this.noteData.reverse();
         console.log('info', this.noteData);
       }, (error) => {
         console.log('error', error);
