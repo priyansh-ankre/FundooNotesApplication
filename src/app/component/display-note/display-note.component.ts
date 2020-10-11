@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteComponent } from '../note/note.component';
 
 @Component({
@@ -9,11 +9,15 @@ import { NoteComponent } from '../note/note.component';
 export class DisplayNoteComponent {
 
   @Input() noteData: any;
+  @Output() getNotes:EventEmitter<any>=new EventEmitter();
   
-  constructor(private note: NoteComponent) { }
+  constructor(private note: NoteComponent) {
+    
+   }
 
   ngOnInit(): void {
     this.note.getNotes();
+    this.getNotes.emit();
   }
   
 

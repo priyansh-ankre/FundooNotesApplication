@@ -1,5 +1,5 @@
 <div class="mat-display-container">
-    <div *ngFor="let item of noteArchivedData.slice().reverse()" class="mat-display">
+    <div *ngFor="let item of noteArchivedData" class="mat-display">
         <mat-card>
             <div class="mat-title">
                 <mat-card-title>
@@ -27,4 +27,5 @@
             </div>
         </mat-card>
     </div>
+    <!-- <app-display-note (getNotes)="getArchivedNotes()" *ngFor="let item of noteArchivedData" [noteData]="item"></app-display-note> -->
 </div>

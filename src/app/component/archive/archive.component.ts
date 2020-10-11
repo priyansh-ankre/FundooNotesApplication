@@ -20,6 +20,10 @@ export class ArchiveComponent implements OnInit {
     this.noteService.getArchivedNote()
       .subscribe((response) => {
         this.noteArchivedData=response.data.data;
+        let notes=this.noteArchivedData.filter((element)=>{
+          return element.isArchived===true;
+        })
+        this.noteArchivedData.reverse();
         console.log('archive info',this.noteArchivedData);
       }, (error) => {
         console.log(error);
