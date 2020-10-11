@@ -23,6 +23,7 @@ export class ArchiveComponent implements OnInit {
         let notes=this.noteArchivedData.filter((element)=>{
           return element.isArchived===true;
         })
+        this.noteArchivedData=notes;
         this.noteArchivedData.reverse();
         console.log('archive info',this.noteArchivedData);
       }, (error) => {
