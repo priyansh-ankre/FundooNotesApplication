@@ -32,6 +32,7 @@ import { RemindersIconComponent } from './component/reminders-icon/reminders-ico
 import { ArchiveIconComponent } from './component/archive-icon/archive-icon.component';
 import { DeleteIconComponent } from './component/delete-icon/delete-icon.component';
 import { ColorPalleteComponent } from './component/color-pallete-icon/color-pallete.component';
+import { EditNoteComponent } from './component/edit-note/edit-note.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { ColorPalleteComponent } from './component/color-pallete-icon/color-pall
     ArchiveIconComponent,
     DeleteIconComponent,
     ColorPalleteComponent,
+    EditNoteComponent,
   ],
   imports: [
     MatInputModule,
