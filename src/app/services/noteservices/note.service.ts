@@ -13,6 +13,7 @@ export class NoteService {
   getArchivedNoteUrl=environment.baseUrl+"notes/getArchiveNotesList";
   getTrashNoteUrl=environment.baseUrl+"notes/getTrashNotesList";
   ArchiveNoteUrl=environment.baseUrl+"notes/archiveNotes";
+  editNoteUrl=environment.baseUrl+"notes/updateNotes";
 
   constructor(private httpService:HttpService) { }
 
