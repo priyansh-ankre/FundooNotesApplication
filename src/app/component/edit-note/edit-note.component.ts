@@ -9,16 +9,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class EditNoteComponent implements OnInit {
 
-  title: string;
-  description: String;
-  noteId: any;
-
   constructor(public dialogRef: MatDialogRef<EditNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private noteService: NoteService) {
-    this.title = data.data.title;
-    this.description = data.data.description;
-    this.noteId = data.data.id;
   }
 
   ngOnInit(): void {

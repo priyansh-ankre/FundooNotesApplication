@@ -11,20 +11,24 @@ import { EditNoteComponent } from '../edit-note/edit-note.component';
 export class DisplayNoteComponent {
 
   @Input() noteData: any[];
-  
+
   constructor(private note: NoteComponent,
-    // public dialog:MatDialog
-    ) {
-    
-   }
+    public dialog: MatDialog
+  ) {
+
+  }
 
   ngOnInit(): void {
     this.note.getNotes();
   }
-  
-  // openDialog(){
-  //   this.dialog.open(EditNoteComponent,{
-      
-  //   })
-  // }
+
+  openDialog(itemData: any) {
+    this.dialog.open(EditNoteComponent, {
+      data: {
+        title: itemData.title,
+        description: itemData.description,
+        noteId: itemData.id
+      }
+    })
+  }
 }
