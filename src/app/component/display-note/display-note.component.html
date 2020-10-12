@@ -1,11 +1,11 @@
 <mat-card>
     <div class="mat-title">
-        <mat-card-title>
+        <mat-card-title (click)="openDialog()">
             {{noteData.title}}
         </mat-card-title>
     </div>
     <div class="mat-desc">
-        <mat-card-content>
+        <mat-card-content (click)="openDialog()">
             {{noteData.description}}
         </mat-card-content>
         <div class="note-icon">

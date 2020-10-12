@@ -24,12 +24,7 @@ export class EditNoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  editNotes(title, description) {
-    let data = {
-      "title": title,
-      "description": description,
-      "noteId": this.noteId
-    }
+  editNotes(data) {
     this.noteService.editNote(data)
       .subscribe((response) => {
         console.log("edit note response", response)
