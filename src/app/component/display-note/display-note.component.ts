@@ -10,10 +10,11 @@ import { EditNoteComponent } from '../edit-note/edit-note.component';
 })
 export class DisplayNoteComponent {
 
-  @Input() noteData: any;
+  @Input() noteData: any[];
   
   constructor(private note: NoteComponent,
-    public dialog:MatDialog) {
+    // public dialog:MatDialog
+    ) {
     
    }
 
@@ -21,13 +22,9 @@ export class DisplayNoteComponent {
     this.note.getNotes();
   }
   
-  openDialog(){
-    this.dialog.open(EditNoteComponent,{
-      data:{
-        "title":this.noteData.title,
-        "description":this.noteData.description,
-        "noteId":this.noteData.Id
-      }
-    })
-  }
+  // openDialog(){
+  //   this.dialog.open(EditNoteComponent,{
+      
+  //   })
+  // }
 }

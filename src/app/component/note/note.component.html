@@ -1,6 +1,6 @@
 <div>
     <app-create-note (getNotes)="getNotes()"></app-create-note>
 </div>
-<div class="mat-display-container">
-    <app-display-note *ngFor="let item of noteData" class="mat-display" [noteData]="item"></app-display-note>
+<div>
+    <app-display-note [noteData]="noteData"></app-display-note>
 </div>
