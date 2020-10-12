@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { NoteService } from 'src/app/services/noteservices/note.service';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-note',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditNoteComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+  description: String;
+  noteId: any;
+
+  constructor(public dialogRef: MatDialogRef<EditNoteComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private noteService: NoteService) {
+    this.title = data.data.title;
+    this.description = data.data.description;
+    this.noteId = data.data.id;
+  }
 
   ngOnInit(): void {
   }
 
+  editNotes(title, description) {
+    let data = {
+      "title": title,
+      "description": description,
+      "noteId": this.noteId
+    }
+    this.noteService.editNote(data)
+      .subscribe((response) => {
+        console.log("edit note response", response)
+        this.dialogRef.close();
+      }, (error) => {
+
+      })
+  }
 }
