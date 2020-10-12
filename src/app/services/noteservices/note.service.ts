@@ -36,4 +36,8 @@ export class NoteService {
   getTrashNote():Observable<any>{
     return this.httpService.getNotes(this.getTrashNoteUrl);
   }
+
+  editNote(note):Observable<any>{
+    return this.httpService.postNote(this.editNoteUrl,note);
+  }
 }
