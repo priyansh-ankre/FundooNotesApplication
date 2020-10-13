@@ -2,5 +2,5 @@
     <app-create-note (getNotes)="getNotes()"></app-create-note>
 </div>
 <div>
-    <app-display-note [noteData]="noteData"></app-display-note>
+    <app-display-note (getNotes)="getNotes()" [noteData]="noteData"></app-display-note>
 </div>
