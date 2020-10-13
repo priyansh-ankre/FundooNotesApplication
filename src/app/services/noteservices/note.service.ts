@@ -41,4 +41,8 @@ export class NoteService {
   editNote(note):Observable<any>{
     return this.httpService.postNote(this.editNoteUrl,note);
   }
+
+  changeColor(note):Observable<any>{
+    return this.httpService.postNote(this.changeColorUrl,note);
+  }
 }
