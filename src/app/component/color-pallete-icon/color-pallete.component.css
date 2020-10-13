@@ -1,6 +1,18 @@
+.pallete-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+
 button {
     min-width: 0px;
     padding: 5px;
     line-height: 0px;
     border-radius: 50%;
+}
+
+mat-card {
+    position: absolute;
+    left: 7px;
+    z-index: 1;
 }

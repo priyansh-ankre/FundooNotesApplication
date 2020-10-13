@@ -1,3 +1,10 @@
-<button mat-button class="notification-button">
+<button mat-button class="notification-button" (click)="colorClick()">
     <mat-icon>color_lens</mat-icon>
+    <mat-card *ngIf="colorNote">
+        <div *ngFor="let item of colorCode" class="pallete-container">
+            <div *ngFor="let name1 of item">
+                <button mat-button [ngStyle]="{'background-color': name1.hexcode}" mat-mini-fab></button>
+</div>
+</div>
+</mat-card>
 </button>

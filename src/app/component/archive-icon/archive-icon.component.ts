@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArchiveIconComponent implements OnInit {
 
-  archiveNoteData: any[];
   constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
@@ -16,7 +15,7 @@ export class ArchiveIconComponent implements OnInit {
 
   ArchiveNotes(note) {
     let noteData = {
-      'noteIdList':[note.id],
+      noteIdList:note.id,
       isArchive: true
     }
     this.noteService.ArchiveNote(noteData)
