@@ -1,5 +1,5 @@
 import { NoteService } from 'src/app/services/noteservices/note.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-archive-icon',
@@ -8,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArchiveIconComponent implements OnInit {
 
+  @Input() note:any[];
+
   constructor(private noteService: NoteService) { }
 
   ngOnInit(): void {
   }
 
-  ArchiveNotes(note) {
+  ArchiveNotes() {
     let noteData = {
-      noteIdList:note.id,
+      noteIdList:this.note["id"],
       isArchive: true
     }
     this.noteService.ArchiveNote(noteData)

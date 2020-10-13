@@ -14,6 +14,7 @@ export class NoteService {
   getTrashNoteUrl=environment.baseUrl+"notes/getTrashNotesList";
   ArchiveNoteUrl=environment.baseUrl+"notes/archiveNotes";
   editNoteUrl=environment.baseUrl+"notes/updateNotes";
+  changeColorUrl=environment.baseUrl+"notes/changesColorNotes";
 
   constructor(private httpService:HttpService) { }
 

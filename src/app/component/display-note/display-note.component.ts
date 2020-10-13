@@ -13,9 +13,8 @@ export class DisplayNoteComponent {
   @Input() noteData: any[];
 
   constructor(private note: NoteComponent,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {
-
   }
 
   ngOnInit(): void {
@@ -31,4 +30,5 @@ export class DisplayNoteComponent {
       }
     })
   }
+  
 }
