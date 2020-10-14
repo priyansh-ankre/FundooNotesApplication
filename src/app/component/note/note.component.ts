@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from 'src/app/services/noteservices/note.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class NoteComponent implements OnInit {
 
   noteData: any[]
 
-  constructor(private noteService: NoteService) { }
+  constructor(
+    private noteService: NoteService,
+    private snackBar:MatSnackBar
+    ) { }
 
   ngOnInit(): void {
     this.getNotes();
@@ -27,7 +31,7 @@ export class NoteComponent implements OnInit {
         this.noteData.reverse();
         console.log('info', this.noteData);
       }, (error) => {
-        console.log('error', error);
+        this.snackBar.open('Error occured', error);
       })
   }
 }

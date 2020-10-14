@@ -3,7 +3,8 @@
     <mat-card *ngIf="colorNote">
         <div *ngFor="let item of colorCode" class="pallete-container">
             <div *ngFor="let name1 of item" style="padding: 2px;">
-                <button mat-button [ngStyle]="{'background-color': name1.hexcode}" mat-mini-fab></button>
+                <button mat-button [ngStyle]="{'background-color': name1.hexcode}" 
+                mat-mini-fab (click)="setcolor(name1.hexcode)"></button>
 </div>
 </div>
 </mat-card>

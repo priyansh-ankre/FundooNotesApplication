@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-color-pallete',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ColorPalleteComponent implements OnInit {
 
   colorNote: boolean = false;
+  @Output() colorEvent: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
@@ -37,5 +38,9 @@ export class ColorPalleteComponent implements OnInit {
 
   colorClick(){
     this.colorNote=! this.colorNote;
+  }
+
+  setcolor(color){
+    this.colorEvent.emit(color);
   }
 }

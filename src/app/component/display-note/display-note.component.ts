@@ -14,7 +14,7 @@ export class DisplayNoteComponent {
   @Input() noteData: any[];
   @Output() getNotes:EventEmitter<any>=new EventEmitter();
 
-  constructor(private note: NoteComponent,
+  constructor(
     private noteService:NoteService,
     public dialog: MatDialog,
   ) {
@@ -36,8 +36,8 @@ export class DisplayNoteComponent {
   
   setColor(color){
     let colorData = {
-      'noteIdList': this.noteData['id'],
-      'color': color
+      noteIdList: this.noteData['id'],
+      color: color
     }
     this.noteService.changeColor(colorData)
     .subscribe((response)=>{
