@@ -1,5 +1,6 @@
 import { NoteService } from 'src/app/services/noteservices/note.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-archive-icon',
@@ -8,23 +9,26 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ArchiveIconComponent implements OnInit {
 
-  @Input() note:any[];
+  @Input() note:any;
 
-  constructor(private noteService: NoteService) { }
+  constructor(
+    private noteService: NoteService,
+    private snackBar:MatSnackBar
+    ) { }
 
   ngOnInit(): void {
   }
 
   ArchiveNotes() {
     let noteData = {
-      noteIdList:this.note["id"],
+      noteIdList:this.note.id,
       isArchive: true
     }
     this.noteService.ArchiveNote(noteData)
       .subscribe((response) => {
         console.log(response);
       }, (error) => {
-        console.log(error);
+        this.snackBar.open('Error Occured',error);
       })
   }
 }
