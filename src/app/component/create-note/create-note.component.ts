@@ -3,6 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { NoteModel } from 'src/app/model/note-model/note-model';
 import { NoteService } from 'src/app/services/noteservices/note.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-note',
@@ -20,7 +21,8 @@ export class CreateNoteComponent implements OnInit {
 
   constructor(
     private service: NoteService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
   ) {
 
   }
@@ -47,8 +49,7 @@ export class CreateNoteComponent implements OnInit {
         this.getNotes.emit();
         console.log(response);
       }, (error) => {
-        console.log(error);
-
+        this.snackBar.open('Error occured', error);
       })
   }
 
