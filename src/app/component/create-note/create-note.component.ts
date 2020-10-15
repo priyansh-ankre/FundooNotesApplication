@@ -49,7 +49,8 @@ export class CreateNoteComponent implements OnInit {
         this.getNotes.emit();
         console.log(response);
       }, (error) => {
-        this.snackBar.open('Error occured', error);
+        console.log('error', error);
+
       })
   }
 
