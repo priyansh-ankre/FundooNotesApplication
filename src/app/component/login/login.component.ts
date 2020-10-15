@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginModel } from 'src/app/model/login-model/login-model';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private route:Router
+    private route: Router,
+    private snackBar: MatSnackBar
   ) {
     this.form = this.fb.group({
       email: ['', [Validators.email, Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -38,11 +40,10 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         localStorage.setItem("token", response.id);
-        localStorage.setItem("email",response.email);
+        localStorage.setItem("email", response.email);
         this.route.navigate(['/dashboard']);
       }, (error) => {
-        console.log(error);
-
+        this.snackBar.open('Error occured', error);
       });
   }
 }
