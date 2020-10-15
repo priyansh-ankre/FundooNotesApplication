@@ -1,6 +1,7 @@
 import { NoteService } from 'src/app/services/noteservices/note.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-note',
@@ -11,7 +12,8 @@ export class EditNoteComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EditNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private noteService: NoteService) {
+    private noteService: NoteService,
+    private snackBar:MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class EditNoteComponent implements OnInit {
         console.log("edit note response", response)
         this.dialogRef.close();
       }, (error) => {
-
+        this.snackBar.open('Error occured',error);
       })
   }
 }
