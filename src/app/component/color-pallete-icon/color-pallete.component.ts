@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoteService } from './../../services/noteservices/note.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-color-pallete',
@@ -9,8 +11,10 @@ export class ColorPalleteComponent implements OnInit {
 
   colorNote: boolean = false;
   @Output() colorEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Input() noteData: any;
 
-  constructor() { }
+  constructor(private noteService: NoteService,
+    private snackBar: MatSnackBar) { }
 
   public colorCode: any = [
     [
@@ -36,11 +40,20 @@ export class ColorPalleteComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  colorClick(){
-    this.colorNote=! this.colorNote;
+  colorClick() {
+    this.colorNote = !this.colorNote;
   }
 
-  setcolor(color){
-    this.colorEvent.emit(color);
+  setColor(color) {
+    let colorData = {
+      noteIdList: [this.noteData.id],
+      color: color
+    }
+    this.noteService.changeColor(colorData)
+      .subscribe((response) => {
+        console.log('color-pallete response',response);
+      }, (error) => {
+        this.snackBar.open('Error occured', error);
+      })
   }
 }

@@ -1,6 +1,6 @@
 <div class="mat-display-container">
     <div *ngFor="let item of noteData" class="mat-display">
-        <mat-card>
+        <mat-card [ngStyle]="{'background-color': item.color}">
             <div class="mat-title">
                 <mat-card-title (click)="openDialog(item)">
                     {{item.title}}
@@ -18,7 +18,7 @@
                         <app-archive-icon [note]="item"></app-archive-icon>
                     </div>
                     <div>
-                        <app-color-pallete (colorEvent)="setColor()"></app-color-pallete>
+                        <app-color-pallete [noteData]="item"></app-color-pallete>
                     </div>
                     <div>
                         <app-delete-icon></app-delete-icon>
