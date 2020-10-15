@@ -1,6 +1,6 @@
 <button mat-button class="notification-button" (click)="moreClick()">
     <mat-icon>more_vertical</mat-icon>
-    <mat-card *ngIf="deleteNote">
+    <mat-card *ngIf="deleteNote" (click)="trashNote()">
         Delete note
     </mat-card>
 </button>
