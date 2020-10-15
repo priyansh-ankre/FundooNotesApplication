@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoteService } from 'src/app/services/noteservices/note.service';
+import { NoteComponent } from '../note/note.component';
 
 @Component({
   selector: 'app-delete-icon',
@@ -8,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class DeleteIconComponent implements OnInit {
 
   deleteNote: boolean = false;
-  constructor() { }
+  @Input() note: any;
+  
+  constructor(
+    private noteService: NoteService,
+    private snackBar: MatSnackBar,
+    private noteCom: NoteComponent
+  ) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +26,18 @@ export class DeleteIconComponent implements OnInit {
     this.deleteNote=!this.deleteNote;
   }
 
+  trashNote(){
+    let data={
+      isDeleted:true,
+      noteIdList:[this.note.id]
+    }
+
+    this.noteService.trashNotes(data)
+    .subscribe((response)=>{
+      console.log(response);
+      this.noteCom.getNotes();
+    },(error)=>{
+      this.snackBar.open('Note not deleted due to some error',error);
+    })
+  }
 }

@@ -22,14 +22,10 @@ export class ArchiveIconComponent implements OnInit {
   }
 
   ArchiveNotes() {
-    console.log('noteId', this.note.id);
-
     let noteData = {
       noteIdList: [this.note.id],
       isArchived: true
     }
-    console.log('noteData', noteData);
-
 
     this.noteService.ArchiveNote(noteData)
       .subscribe((response) => {
