@@ -1,6 +1,7 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteService } from './../../services/noteservices/note.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { NoteComponent } from '../note/note.component';
 
 @Component({
   selector: 'app-color-pallete',
@@ -14,7 +15,8 @@ export class ColorPalleteComponent implements OnInit {
   @Input() noteData: any;
 
   constructor(private noteService: NoteService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    private note:NoteComponent) { }
 
   public colorCode: any = [
     [
@@ -52,6 +54,7 @@ export class ColorPalleteComponent implements OnInit {
     this.noteService.changeColor(colorData)
       .subscribe((response) => {
         console.log('color-pallete response',response);
+        this.note.getNotes();
       }, (error) => {
         this.snackBar.open('Error occured', error);
       })
