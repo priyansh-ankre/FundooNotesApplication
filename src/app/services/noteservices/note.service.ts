@@ -12,7 +12,7 @@ export class NoteService {
   getNoteUrl=environment.baseUrl+"notes/getNotesList";
   getArchivedNoteUrl=environment.baseUrl+"notes/getArchiveNotesList";
   getTrashNoteUrl=environment.baseUrl+"notes/getTrashNotesList";
-  TrashNoteUrl=environment.baseUrl+"notes/trashNotes";
+  trashNoteUrl=environment.baseUrl+"notes/trashNotes";
   ArchiveNoteUrl=environment.baseUrl+"notes/archiveNotes";
   editNoteUrl=environment.baseUrl+"notes/updateNotes";
   changeColorUrl=environment.baseUrl+"notes/changesColorNotes";
@@ -47,5 +47,7 @@ export class NoteService {
     return this.httpService.postNote(this.changeColorUrl,note);
   }
 
-
+  trashNotes(note){
+    return this.httpService.postNote(this.trashNoteUrl,note);
+  }
 }
