@@ -29,7 +29,7 @@ export class DeleteIconComponent implements OnInit {
   trashNote(){
     let data={
       isDeleted:true,
-      noteIdList:[this.note.id]
+      noteIdList:[this.note]
     }
 
     this.noteService.trashNotes(data)

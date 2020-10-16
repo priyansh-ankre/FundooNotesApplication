@@ -10,7 +10,7 @@
             <app-reminders-icon></app-reminders-icon>
             <app-archive-icon [note]="data.noteId"></app-archive-icon>
             <app-color-pallete [noteData]="data"></app-color-pallete>
-            <app-delete-icon></app-delete-icon>
+            <app-delete-icon [note]="data.noteId"></app-delete-icon>
         </div>
         <button mat-button (click)="editNotes(data)">Close</button>
     </div>
