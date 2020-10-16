@@ -18,6 +18,7 @@ export class DashboardsComponent implements OnInit {
   viewTitle = false;
   accCircle=false;
   accEmail=localStorage.getItem("email");
+  view = "view_list";
 
   constructor(
     public dialog: MatDialog,
@@ -47,6 +48,15 @@ export class DashboardsComponent implements OnInit {
 
   signout(){
     this.rout.navigate(['/login']);
+  }
+
+  changeView(): String {
+    this.viewClick = !this.viewClick;
+    if (this.viewClick) {
+      return this.view = "view_list";
+    } else {
+      return this.view = "grid_on";
+    }
   }
 
 }

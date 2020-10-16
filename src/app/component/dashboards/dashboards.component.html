@@ -19,6 +19,11 @@
                     <mat-icon style="padding-right: 15px;">close</mat-icon>
                 </div>
             </mat-toolbar-row>
+            <div>
+                <button mat-icon-button (click)="changeView()">
+                  <mat-icon matTooltip="Change view">{{view}}</mat-icon>
+                </button>
+            </div>
             <button (click)="circleClose()" mat-icon-button>
                 <mat-icon>circle</mat-icon>
                 <mat-card *ngIf="accCircle==true" class="account">
