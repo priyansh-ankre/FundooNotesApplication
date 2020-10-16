@@ -5,9 +5,13 @@
     <div>
         <input matInput mat-dialog-content [(ngModel)]="data.description" style="border: none;outline: none;">
     </div>
-    <div mat-dialog-actions style="float: right;">
-        <app-archive-icon></app-archive-icon>
-        <app-color-pallete></app-color-pallete>
+    <div mat-dialog-actions style="display: flex;justify-content: space-between;">
+        <div style="display: flex;justify-content: space-between;width: 40%;">
+            <app-reminders-icon></app-reminders-icon>
+            <app-archive-icon></app-archive-icon>
+            <app-color-pallete></app-color-pallete>
+            <app-delete-icon></app-delete-icon>
+        </div>
         <button mat-button (click)="editNotes(data)">Close</button>
     </div>
 </div>
