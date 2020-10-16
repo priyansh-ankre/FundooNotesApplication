@@ -47,7 +47,7 @@ export class NoteService {
     return this.httpService.postNote(this.changeColorUrl,note);
   }
 
-  trashNotes(note){
+  trashNotes(note):Observable<any>{
     return this.httpService.postNote(this.trashNoteUrl,note);
   }
 }
