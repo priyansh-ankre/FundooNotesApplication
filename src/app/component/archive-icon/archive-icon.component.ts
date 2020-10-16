@@ -23,7 +23,7 @@ export class ArchiveIconComponent implements OnInit {
 
   ArchiveNotes() {
     let noteData = {
-      noteIdList: [this.note.id],
+      noteIdList: [this.note],
       isArchived: true
     }
 
