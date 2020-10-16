@@ -48,7 +48,7 @@ export class ColorPalleteComponent implements OnInit {
 
   setColor(color) {
     let colorData = {
-      noteIdList: [this.noteData.id],
+      noteIdList: [this.noteData],
       color: color
     }
     this.noteService.changeColor(colorData)

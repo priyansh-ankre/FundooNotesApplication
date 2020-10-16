@@ -9,7 +9,7 @@
         <div style="display: flex;justify-content: space-between;width: 40%;">
             <app-reminders-icon></app-reminders-icon>
             <app-archive-icon [note]="data.noteId"></app-archive-icon>
-            <app-color-pallete [noteData]="data"></app-color-pallete>
+            <app-color-pallete [noteData]="data.noteId"></app-color-pallete>
             <app-delete-icon [note]="data.noteId"></app-delete-icon>
         </div>
         <button mat-button (click)="editNotes(data)">Close</button>
