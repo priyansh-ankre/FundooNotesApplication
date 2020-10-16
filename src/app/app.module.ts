@@ -73,7 +73,7 @@ import { EditNoteComponent } from './component/edit-note/edit-note.component';
     MatExpansionModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [NoteComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

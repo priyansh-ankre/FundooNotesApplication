@@ -20,7 +20,6 @@ export class DisplayNoteComponent {
   }
 
   ngOnInit(): void {
-    this.getNotes.emit();
   }
 
   openDialog(itemData: any) {
