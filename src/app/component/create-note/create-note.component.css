@@ -54,3 +54,15 @@
     font-size: .875rem;
     font-weight: 500;
 }
+
+.icon-button {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-box {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
