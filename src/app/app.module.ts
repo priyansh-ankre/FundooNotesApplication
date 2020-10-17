@@ -33,6 +33,7 @@ import { ArchiveIconComponent } from './component/archive-icon/archive-icon.comp
 import { DeleteIconComponent } from './component/delete-icon/delete-icon.component';
 import { ColorPalleteComponent } from './component/color-pallete-icon/color-pallete.component';
 import { EditNoteComponent } from './component/edit-note/edit-note.component';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { EditNoteComponent } from './component/edit-note/edit-note.component';
     MatSnackBarModule,
     MatExpansionModule,
     MatDialogModule,
+    NgHttpLoaderModule.forRoot(),
   ],
   providers: [NoteComponent],
   bootstrap: [AppComponent]
