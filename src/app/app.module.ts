@@ -34,6 +34,7 @@ import { DeleteIconComponent } from './component/delete-icon/delete-icon.compone
 import { ColorPalleteComponent } from './component/color-pallete-icon/color-pallete.component';
 import { EditNoteComponent } from './component/edit-note/edit-note.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
     DeleteIconComponent,
     ColorPalleteComponent,
     EditNoteComponent,
+    SearchPipe,
   ],
   imports: [
     MatInputModule,

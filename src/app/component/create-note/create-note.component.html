@@ -16,9 +16,10 @@
             <div class="icon-button">
                 <div class="icon-box">
                     <app-reminders-icon></app-reminders-icon>
-                    <app-archive-icon></app-archive-icon>
+                    <button mat-button class="notification-button" (click)="archiveClick()">
+                        <mat-icon>archive</mat-icon>
+                    </button>
                     <app-color-pallete></app-color-pallete>
-                    <app-delete-icon></app-delete-icon>
                 </div>
                 <div>
                     <button mat-button (click)="clickBox_()" class="note-button">close</button>
