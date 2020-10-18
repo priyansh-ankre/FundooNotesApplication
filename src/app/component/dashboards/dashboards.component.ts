@@ -19,6 +19,7 @@ export class DashboardsComponent implements OnInit {
   accCircle=false;
   accEmail=localStorage.getItem("email");
   view = "view_list";
+  search=new FormControl('');
 
   constructor(
     public dialog: MatDialog,
