@@ -1,5 +1,5 @@
-<div class="mat-display-container">
-    <div *ngFor="let item of noteData|search:searchItem" class="mat-display">
+<div [ngClass]="changeLayout()">
+    <div *ngFor="let item of noteData|search:searchItem" [ngClass]="changeNoteCardCss()">
         <mat-card [ngStyle]="{'background-color': item.color}">
             <div class="mat-title">
                 <mat-card-title (click)="openDialog(item)">

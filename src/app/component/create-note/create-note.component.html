@@ -9,7 +9,7 @@
             </div>
         </div>
     </form>
-    <div style="display: flex;justify-content: center;">
+    <div style="display: flex;justify-content: center;" [ngStyle]="{'background-color': color}">
         <form class="example-form" *ngIf="switchBox==true">
             <input type="text" placeholder="Title" class="tan" style="font-size: 1rem;" [formControl]="title">
             <input type="text" placeholder="Take a note..." class="tan" [formControl]="description">

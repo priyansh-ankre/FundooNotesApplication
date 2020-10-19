@@ -9,7 +9,7 @@ mat-card {
     justify-content: space-between;
 }
 
-.mat-display-container {
+.mat-display-container-grid {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -20,7 +20,28 @@ mat-card {
     padding-top: 1cm;
 }
 
+.mat-display-container-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 55%;
+    margin: auto;
+    padding-top: 1cm;
+}
+
 .mat-display {
     width: 214px;
+    text-align: left;
+}
+
+.mat-display-grid {
+    width: 214px;
+    text-align: left;
+}
+
+.mat-display-list {
+    width: 60%;
     text-align: left;
 }
