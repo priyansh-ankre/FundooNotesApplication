@@ -1,8 +1,7 @@
+import { DashboardsComponent } from './../dashboards/dashboards.component';
 import { MatDialog } from '@angular/material/dialog';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { NoteComponent } from '../note/note.component';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { EditNoteComponent } from '../edit-note/edit-note.component';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-display-note',
@@ -13,10 +12,13 @@ export class DisplayNoteComponent {
 
   @Input() noteData: any[];
   @Output() getNotes:EventEmitter<any>=new EventEmitter();
+  searchItem:string;
 
   constructor(
     public dialog: MatDialog,
+    private dashboard:DashboardsComponent
   ) {
+    this.searchItem=this.dashboard.search.value;
   }
 
   ngOnInit(): void {
