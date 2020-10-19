@@ -1,8 +1,7 @@
 import { ColorPalleteComponent } from './../color-pallete-icon/color-pallete.component';
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { NoteService } from 'src/app/services/noteservices/note.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-note',
@@ -11,20 +10,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CreateNoteComponent implements OnInit {
 
-  @ViewChild(ColorPalleteComponent) colorChild;
+  @ViewChild(ColorPalleteComponent) colorPallete: ColorPalleteComponent;
   switchBox = false;
   form: FormGroup;
-  color:any;
+  colors: any;
   title = new FormControl('');
   description = new FormControl('');
-  isArchived=new FormControl(false);
-  
+  isArchived = new FormControl(false);
+  color = new FormControl('#FFFFFF');
+
+
   @Output() getNotes: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private service: NoteService,
-    private fb: FormBuilder,
-    private snackBar: MatSnackBar
   ) {
 
   }
@@ -45,7 +44,8 @@ export class CreateNoteComponent implements OnInit {
     let addNoteData = {
       title: this.title.value,
       description: this.description.value,
-      isArchived:this.isArchived.value
+      isArchived: this.isArchived.value,
+      color: this.color.value
     }
     this.service.addNote(addNoteData)
       .subscribe((response) => {
@@ -57,12 +57,13 @@ export class CreateNoteComponent implements OnInit {
       })
   }
 
-  archiveClick(){
-    this.isArchived=new FormControl(true);
+  archiveClick() {
+    this.isArchived = new FormControl(true);
     this.clickBox_();
   }
 
-  colorClick(){
-    this.color=this.colorChild.colorCode;
+  colorsClick() {
+    this.colors = this.colorPallete.colorCode.value;
+    this.color = new FormControl(this.colors);
   }
 }
