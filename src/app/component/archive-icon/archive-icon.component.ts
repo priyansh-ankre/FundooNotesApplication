@@ -22,17 +22,19 @@ export class ArchiveIconComponent implements OnInit {
   }
 
   ArchiveNotes() {
-    let noteData = {
-      noteIdList: [this.note],
-      isArchived: true
+    if (this.note.length !== 0){
+      let noteData = {
+        noteIdList: [this.note],
+        isArchived: true
+      }
+  
+      this.noteService.ArchiveNote(noteData)
+        .subscribe((response) => {
+          console.log(response);
+          this.noteCom.getNotes();
+        }, (error) => {
+          this.snackBar.open('Error Occured', error);
+        })
     }
-
-    this.noteService.ArchiveNote(noteData)
-      .subscribe((response) => {
-        console.log(response);
-        this.noteCom.getNotes();
-      }, (error) => {
-        this.snackBar.open('Error Occured', error);
-      })
-  }
+    }
 }
