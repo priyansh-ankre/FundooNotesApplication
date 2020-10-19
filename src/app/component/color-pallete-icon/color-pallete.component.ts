@@ -47,16 +47,18 @@ export class ColorPalleteComponent implements OnInit {
   }
 
   setColor(color) {
-    let colorData = {
-      noteIdList: [this.noteData],
-      color: color
+    if(this.noteData.length !==0){
+      let colorData = {
+        noteIdList: [this.noteData],
+        color: color
+      }
+      this.noteService.changeColor(colorData)
+        .subscribe((response) => {
+          console.log('color-pallete response',response);
+          this.note.getNotes();
+        }, (error) => {
+          this.snackBar.open('Error occured', error);
+        })
     }
-    this.noteService.changeColor(colorData)
-      .subscribe((response) => {
-        console.log('color-pallete response',response);
-        this.note.getNotes();
-      }, (error) => {
-        this.snackBar.open('Error occured', error);
-      })
   }
 }
