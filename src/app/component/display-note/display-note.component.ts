@@ -1,3 +1,4 @@
+import { LabelComponent } from './../label/label.component';
 import { DashboardsComponent } from './../dashboards/dashboards.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
@@ -32,6 +33,16 @@ export class DisplayNoteComponent {
         title: itemData.title,
         description: itemData.description,
         noteId: itemData.id
+      }
+    })
+  }
+
+  openLabelDialog(item:any){
+    this.dialog.open(LabelComponent,{
+      data:{
+        isDeleted:false,
+        label:item.label,
+        userId:item.id
       }
     })
   }
