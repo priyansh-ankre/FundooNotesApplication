@@ -35,6 +35,7 @@ import { ColorPalleteComponent } from './component/color-pallete-icon/color-pall
 import { EditNoteComponent } from './component/edit-note/edit-note.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { SearchPipe } from './pipe/search.pipe';
+import { EditLabelComponent } from './component/edit-label/edit-label.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { SearchPipe } from './pipe/search.pipe';
     ColorPalleteComponent,
     EditNoteComponent,
     SearchPipe,
+    EditLabelComponent,
   ],
   imports: [
     MatInputModule,
