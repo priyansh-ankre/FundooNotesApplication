@@ -52,4 +52,7 @@ export class NoteService {
     return this.httpService.postNote(this.trashNoteUrl,note);
   }
 
+  addLabel(note):Observable<any>{
+    return this.httpService.postNote(this.labelUrl,note);
+  }
 }
