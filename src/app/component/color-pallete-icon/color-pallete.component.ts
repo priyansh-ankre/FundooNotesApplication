@@ -13,6 +13,7 @@ export class ColorPalleteComponent implements OnInit {
   colorNote: boolean = false;
   @Output() colorEvent: EventEmitter<any> = new EventEmitter<any>();
   @Input() noteData: any;
+  @Output() colorPalleteEvent: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private noteService: NoteService,
     private snackBar: MatSnackBar,
@@ -59,6 +60,9 @@ export class ColorPalleteComponent implements OnInit {
         }, (error) => {
           this.snackBar.open('Error occured', error);
         })
+    }
+    else{
+      this.colorPalleteEvent.emit();
     }
   }
 }

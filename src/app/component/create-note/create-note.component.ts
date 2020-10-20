@@ -13,11 +13,10 @@ export class CreateNoteComponent implements OnInit {
   @ViewChild(ColorPalleteComponent) colorPallete: ColorPalleteComponent;
   switchBox = false;
   form: FormGroup;
-  colors: any;
   title = new FormControl('');
   description = new FormControl('');
   isArchived = new FormControl(false);
-  color = new FormControl('#FFFFFF');
+  color = '#FFFFFF';
 
 
   @Output() getNotes: EventEmitter<any> = new EventEmitter();
@@ -45,7 +44,7 @@ export class CreateNoteComponent implements OnInit {
       title: this.title.value,
       description: this.description.value,
       isArchived: this.isArchived.value,
-      color: this.color.value
+      color: this.color
     }
     this.service.addNote(addNoteData)
       .subscribe((response) => {
@@ -63,7 +62,7 @@ export class CreateNoteComponent implements OnInit {
   }
 
   colorsClick() {
-    this.colors = this.colorPallete.colorCode.value;
-    this.color = new FormControl(this.colors);
+    this.color = this.colorPallete.colorCode.hexcode;
+    console.log(this.color);
   }
 }

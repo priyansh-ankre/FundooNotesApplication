@@ -9,15 +9,15 @@
             </div>
         </div>
     </form>
-    <div style="display: flex;justify-content: center;" [ngStyle]="{'background-color': color}">
-        <form class="example-form" *ngIf="switchBox==true">
+    <div style="display: flex;justify-content: center;">
+        <form class="example-form" *ngIf="switchBox==true" [ngStyle]="{'background-color': color}">
             <input type="text" placeholder="Title" class="tan" style="font-size: 1rem;" [formControl]="title">
             <input type="text" placeholder="Take a note..." class="tan" [formControl]="description">
             <div class="icon-button">
                 <div class="icon-box">
                     <app-reminders-icon></app-reminders-icon>
                     <app-archive-icon (click)="archiveClick()"></app-archive-icon>
-                    <app-color-pallete (click)="colorsClick()"></app-color-pallete>
+                    <app-color-pallete (colorPalleteEvent)="colorsClick()"></app-color-pallete>
                 </div>
                 <div>
                     <button mat-button (click)="clickBox_()" class="note-button">close</button>
