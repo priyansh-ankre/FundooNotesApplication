@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
         console.log(response);
         localStorage.setItem("token", response.id);
         localStorage.setItem("email", response.email);
+        localStorage.setItem("userId", response.userId);
         this.route.navigate(['/dashboard']);
       }, (error) => {
         this.snackBar.open('Error occured', error);
