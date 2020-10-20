@@ -16,6 +16,7 @@ export class NoteService {
   ArchiveNoteUrl=environment.baseUrl+"notes/archiveNotes";
   editNoteUrl=environment.baseUrl+"notes/updateNotes";
   changeColorUrl=environment.baseUrl+"notes/changesColorNotes";
+  labelUrl=environment.baseUrl+"/noteLabels";
 
   constructor(private httpService:HttpService) { }
 
@@ -50,4 +51,5 @@ export class NoteService {
   trashNotes(note):Observable<any>{
     return this.httpService.postNote(this.trashNoteUrl,note);
   }
+
 }
