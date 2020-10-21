@@ -17,6 +17,7 @@ export class NoteService {
   editNoteUrl=environment.baseUrl+"notes/updateNotes";
   changeColorUrl=environment.baseUrl+"notes/changesColorNotes";
   labelUrl=environment.baseUrl+"/noteLabels";
+  getLabelUrl=environment.baseUrl+"noteLabels/getNoteLabelList";
 
   constructor(private httpService:HttpService) { }
 
