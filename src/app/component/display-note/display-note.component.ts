@@ -37,11 +37,6 @@ export class DisplayNoteComponent {
     })
   }
 
-  openLabelDialog(item:any){
-    this.dialog.open(LabelComponent,{
-      
-    })
-  }
   
   changeView(){
     this.view=this.dashboard.view.valueOf();

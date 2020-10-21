@@ -1,3 +1,4 @@
+import { LabelComponent } from './../label/label.component';
 import { NoteService } from './../../services/noteservices/note.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -58,6 +59,10 @@ export class DashboardsComponent implements OnInit {
     } else {
       return this.view = "grid_on";
     }
+  }
+
+  openLabelDialog(){
+    this.dialog.open(LabelComponent);
   }
 
 }
