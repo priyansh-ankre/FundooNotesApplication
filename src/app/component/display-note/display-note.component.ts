@@ -39,11 +39,7 @@ export class DisplayNoteComponent {
 
   openLabelDialog(item:any){
     this.dialog.open(LabelComponent,{
-      data:{
-        isDeleted:false,
-        label:item.label,
-        userId:item.id
-      }
+      
     })
   }
   
