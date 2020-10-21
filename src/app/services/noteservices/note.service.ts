@@ -56,4 +56,8 @@ export class NoteService {
   addLabel(note):Observable<any>{
     return this.httpService.postNote(this.labelUrl,note);
   }
+
+  getLabel(note):Observable<any>{
+    return this.httpService.postNote(this.getLabelUrl,note);
+  }
 }
