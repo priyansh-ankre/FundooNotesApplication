@@ -44,6 +44,7 @@ export class LabelComponent implements OnInit {
     this.noteService.addLabel(data)
     .subscribe((response)=>{
       console.log('label response',response);
+      this.getLabel();
       this.dialogRef.close();
     },(error)=>{
       this.snackBar.open('error occured',error,{
