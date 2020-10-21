@@ -11,6 +11,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class LabelComponent implements OnInit {
 
+  allLabels:any;
   label=new FormControl('');
 
   constructor(
@@ -21,6 +22,17 @@ export class LabelComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  }
+
+  getLabel(){
+    this.noteService.getLabel()
+    .subscribe((response)=>{
+      this.allLabels=response.data.data;
+    },(error)=>{
+      this.snackBar.open("Error in getLabel",error,{
+        duration:3000
+      })
+    })
   }
 
   addLabel(){
