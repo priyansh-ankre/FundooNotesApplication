@@ -11,7 +11,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class LabelComponent implements OnInit {
 
-  name=new FormControl('');
+  label=new FormControl('');
 
   constructor(
     public dialogRef:MatDialogRef<LabelComponent>,
@@ -26,7 +26,7 @@ export class LabelComponent implements OnInit {
   addLabel(){
     let data={
       isDeleted:false,
-      label:this.name,
+      label:this.label,
       userId:localStorage.getItem('userId')
     }
     this.noteService.addLabel(data)
