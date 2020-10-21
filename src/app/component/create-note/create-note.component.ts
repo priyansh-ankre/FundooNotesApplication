@@ -61,8 +61,8 @@ export class CreateNoteComponent implements OnInit {
     this.clickBox_();
   }
 
-  colorsClick() {
-    this.color = this.colorPallete.colorCode.hexcode;
-    console.log(this.color);
+  colorsClick($event) {
+    this.color = $event;
+    console.log('color',this.color);
   }
 }

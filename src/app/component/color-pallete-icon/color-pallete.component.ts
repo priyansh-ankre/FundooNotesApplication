@@ -48,6 +48,7 @@ export class ColorPalleteComponent implements OnInit {
   }
 
   setColor(color) {
+    this.colorPalleteEvent.emit(color);
     if(this.noteData.length !==0){
       let colorData = {
         noteIdList: [this.noteData],
@@ -60,9 +61,6 @@ export class ColorPalleteComponent implements OnInit {
         }, (error) => {
           this.snackBar.open('Error occured', error);
         })
-    }
-    else{
-      this.colorPalleteEvent.emit();
     }
   }
 }

@@ -17,7 +17,7 @@
                 <div class="icon-box">
                     <app-reminders-icon></app-reminders-icon>
                     <app-archive-icon (click)="archiveClick()"></app-archive-icon>
-                    <app-color-pallete (colorPalleteEvent)="colorsClick()"></app-color-pallete>
+                    <app-color-pallete (colorPalleteEvent)="colorsClick($event)"></app-color-pallete>
                 </div>
                 <div>
                     <button mat-button (click)="clickBox_()" class="note-button">close</button>

@@ -4,24 +4,30 @@
     </h2>
 
     <mat-form-field appearance="fill legacy">
-        <input [formControl]="label" matInput placeholder="Create new label">
+        <input [formControl]="labelNote" matInput placeholder="Create new label">
     </mat-form-field>
-    <button mat-button class="done-button" (click)="addLabel()">
+    <button mat-button class="done-button done_" style="float: right;" (click)="addLabel()">
         <mat-icon>
             done
         </mat-icon>
     </button>
 
     <div *ngFor="let labels of allLabels">
-        <div fxLayout="row">
-            <mat-icon>
-                label
-            </mat-icon>
-            <input [formControl]="label" matInput value="{{labels.label}}">
-            <span class="fill-remaining-space"></span>
-            <mat-icon>
-                delete
-            </mat-icon>
+        <div fxLayout="column">
+            <div class="fill-remaining-space">
+                <button mat-button class="done-button">
+                    <mat-icon>
+                        delete
+                    </mat-icon>
+                </button>
+                <!-- <input [formControl]="labelNote" matInput value="{{labels.label}}"> -->
+                <span>{{labels.label}}</span>
+                <button mat-button class="done-button" (click)="addLabel()">
+                    <mat-icon>
+                        edit
+                    </mat-icon>
+                </button>
+            </div>
         </div>
     </div>
     <mat-divider></mat-divider>
