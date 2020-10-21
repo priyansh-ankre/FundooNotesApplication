@@ -38,7 +38,7 @@ export class LabelComponent implements OnInit {
   addLabel(){
     let data={
       isDeleted:false,
-      label:this.label,
+      label:this.label.value,
       userId:localStorage.getItem('userId')
     }
     this.noteService.addLabel(data)
@@ -50,6 +50,8 @@ export class LabelComponent implements OnInit {
       this.snackBar.open('error occured',error,{
         duration:3000
       })
+      console.log(error);
+      
     })
   }
 }

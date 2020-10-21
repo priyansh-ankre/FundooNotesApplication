@@ -1,0 +1,22 @@
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.complete-class {
+    padding: 1em;
+}
+
+.done-button {
+    min-width: 0px;
+    padding: 5px;
+    line-height: 0px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 2px;
+}
+
+.done {
+    background-color: transparent;
+    float: right;
+    margin: 5px 0px 0px 0px;
+}

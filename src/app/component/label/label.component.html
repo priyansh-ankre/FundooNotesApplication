@@ -1,1 +1,33 @@
-<p>label works!</p>
+<div class="complete-class">
+    <h2>
+        <b>Edit Labels</b>
+    </h2>
+
+    <mat-form-field appearance="fill legacy">
+        <input [formControl]="label" matInput placeholder="Create new label">
+    </mat-form-field>
+    <button mat-button class="done-button" (click)="addLabel()">
+        <mat-icon>
+            done
+        </mat-icon>
+    </button>
+
+    <div *ngFor="let labels of allLabels">
+        <div fxLayout="row">
+            <mat-icon>
+                label
+            </mat-icon>
+            <input [formControl]="label" matInput value="{{labels.label}}">
+            <span class="fill-remaining-space"></span>
+            <mat-icon>
+                delete
+            </mat-icon>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+        <button mat-button class="done" (click)="this.dialogRef.close()">
+            Done
+        </button>
+    </div>
+</div>
