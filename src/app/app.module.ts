@@ -38,6 +38,7 @@ import { SearchPipe } from './pipe/search.pipe';
 import { EditLabelComponent } from './component/edit-label/edit-label.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import {MatChipsModule} from '@angular/material/chips';
     NgHttpLoaderModule.forRoot(),
     MatMenuModule,
     MatChipsModule,
+    MatCheckboxModule
   ],
   providers: [NoteComponent],
   bootstrap: [AppComponent]

@@ -1,9 +1,9 @@
-<div style="width: 600px;" [ngStyle]="{'background-color':data.color}">
+<div style="width: 600px;" [style.backgroundColor]="data.color">
     <div>
-        <input matInput mat-dialog-title [(ngModel)]="data.title" style="border: none;outline: none;">
+        <input matInput mat-dialog-title [(ngModel)]="data.title" style="border: none;outline: none;" [style.backgroundColor]="data.color">
     </div>
     <div>
-        <input matInput mat-dialog-content [(ngModel)]="data.description" style="border: none;outline: none;">
+        <input matInput [(ngModel)]="data.description" style="border: none;outline: none;" [style.backgroundColor]="data.color">
     </div>
     <div mat-dialog-actions style="display: flex;justify-content: space-between;">
         <div style="display: flex;justify-content: space-between;width: 40%;">

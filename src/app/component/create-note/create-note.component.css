@@ -88,10 +88,16 @@
 .chip-list {
     position: absolute;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 10px; */
 }
 
 .chip-set {
     min-width: 100px;
+    margin-left: 0px;
+}
+
+ol {
+    padding-inline-start: 0px;
 }

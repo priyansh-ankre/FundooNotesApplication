@@ -32,7 +32,8 @@ export class DisplayNoteComponent {
       data: {
         title: itemData.title,
         description: itemData.description,
-        noteId: itemData.id
+        noteId: itemData.id,
+        color:itemData.color
       }
     })
   }
