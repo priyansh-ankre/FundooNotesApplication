@@ -20,9 +20,18 @@
                     <app-color-pallete (colorPalleteEvent)="colorsClick($event)"></app-color-pallete>
                     <button mat-button class="label-button" (click)="labelClick=!labelClick">
                         <mat-icon class="more">more_vertical</mat-icon>
-                        <mat-card class="label-card" *ngIf="labelClick">
+                        <mat-card class="label-card" *ngIf="labelClick"
+                            (click)="getLabel();chipLabel=!chipLabel;labelClick=!labelClick">
                             Add label
+                            <div *ngIf="chipLabel" style="padding-left: 58px;">
+                                <mat-chip-list class="chip-list">
+                                    <mat-chip class="chip-set" *ngFor="let chip of allLabels">
+                                        {{chip.label}}
+                                    </mat-chip>
+                                </mat-chip-list>
+                            </div>
                         </mat-card>
+
                     </button>
                 </div>
                 <div>

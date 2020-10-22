@@ -26,6 +26,7 @@ export class CreateNoteComponent implements OnInit {
 
   allLabels:any;
   labelClick=false;
+  chipLabel=false;
 
   constructor(
     private service: NoteService,

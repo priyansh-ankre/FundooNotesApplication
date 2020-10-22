@@ -37,6 +37,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader';
 import { SearchPipe } from './pipe/search.pipe';
 import { EditLabelComponent } from './component/edit-label/edit-label.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDialogModule,
     NgHttpLoaderModule.forRoot(),
     MatMenuModule,
+    MatChipsModule,
   ],
   providers: [NoteComponent],
   bootstrap: [AppComponent]

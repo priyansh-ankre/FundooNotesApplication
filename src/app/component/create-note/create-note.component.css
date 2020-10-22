@@ -84,3 +84,14 @@
 .more {
     margin-left: 5px;
 }
+
+.chip-list {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.chip-set {
+    min-width: 100px;
+}
