@@ -9,7 +9,7 @@
 
 .done-button {
     min-width: 0px;
-    padding: 5px 5px;
+    padding: 5px;
     line-height: 0px;
     border-radius: 50%;
 }
@@ -23,4 +23,9 @@
     background-color: transparent;
     float: right;
     margin: 5px 0px 0px 0px;
+}
+
+.label-div {
+    width: -webkit-fill-available;
+    padding: 7px;
 }

@@ -45,7 +45,8 @@
 }
 
 .tan {
-    opacity: 80%;
+    /* opacity: 80%; */
+    background-color: transparent;
     border: none;
     outline: none;
     min-height: 33px;
@@ -65,4 +66,21 @@
     width: 30%;
     display: flex;
     justify-content: space-between;
+}
+
+.label-button {
+    min-width: 0px;
+    padding: 5px;
+    line-height: 0px;
+    border-radius: 50%;
+}
+
+.label-card {
+    position: absolute;
+    left: 7px;
+    z-index: 2;
+}
+
+.more {
+    margin-left: 5px;
 }

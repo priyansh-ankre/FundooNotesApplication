@@ -6,12 +6,11 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
 
-  private messageSource = new BehaviorSubject(false);
-  open = this.messageSource.asObservable();
-
   constructor() { }
 
-  changeInValue(value: boolean) {
-    this.messageSource.next(value)
+  private getNoteData = new BehaviorSubject([]);
+  currentNote = this.getNoteData.asObservable();
+  updateNoteService(message: any) {
+    this.getNoteData.next(message);
   }
 }

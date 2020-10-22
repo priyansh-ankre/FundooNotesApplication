@@ -36,6 +36,7 @@ import { EditNoteComponent } from './component/edit-note/edit-note.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { SearchPipe } from './pipe/search.pipe';
 import { EditLabelComponent } from './component/edit-label/edit-label.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { EditLabelComponent } from './component/edit-label/edit-label.component'
     MatExpansionModule,
     MatDialogModule,
     NgHttpLoaderModule.forRoot(),
+    MatMenuModule,
   ],
   providers: [NoteComponent],
   bootstrap: [AppComponent]

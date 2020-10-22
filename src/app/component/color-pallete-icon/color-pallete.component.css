@@ -10,8 +10,7 @@ button {
     border-radius: 50%;
 }
 
-mat-card {
+mat-card-title {
     position: absolute;
-    left: 7px;
-    z-index: 1;
+    z-index: 2;
 }

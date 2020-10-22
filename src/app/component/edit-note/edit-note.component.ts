@@ -1,3 +1,4 @@
+import { DataService } from './../../services/dataservices/data.service';
 import { NoteComponent } from './../note/note.component';
 import { NoteService } from 'src/app/services/noteservices/note.service';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -26,8 +27,8 @@ export class EditNoteComponent implements OnInit {
     this.noteService.editNote(data)
       .subscribe((response) => {
         console.log("edit note response", response)
-        this.dialogRef.close();
         this.noteCom.getNotes();
+        this.dialogRef.close();
       }, (error) => {
         this.snackBar.open('Error occured', error);
       })

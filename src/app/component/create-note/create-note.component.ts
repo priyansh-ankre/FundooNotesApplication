@@ -1,5 +1,7 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LabelComponent } from './../label/label.component';
 import { ColorPalleteComponent } from './../color-pallete-icon/color-pallete.component';
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { NoteService } from 'src/app/services/noteservices/note.service';
 
@@ -17,12 +19,17 @@ export class CreateNoteComponent implements OnInit {
   description = new FormControl('');
   isArchived = new FormControl(false);
   color = '#FFFFFF';
+  @Input('allLabels') noteList;
 
 
   @Output() getNotes: EventEmitter<any> = new EventEmitter();
 
+  allLabels:any;
+  labelClick=false;
+
   constructor(
     private service: NoteService,
+    private snackBar:MatSnackBar
   ) {
 
   }
@@ -52,7 +59,6 @@ export class CreateNoteComponent implements OnInit {
         console.log(response);
       }, (error) => {
         console.log('error', error);
-
       })
   }
 
@@ -64,5 +70,20 @@ export class CreateNoteComponent implements OnInit {
   colorsClick($event) {
     this.color = $event;
     console.log('color',this.color);
+    console.log('noteList',this.noteList);
+  }
+
+  getLabel(){
+    this.service.getLabel()
+    .subscribe((response)=>{
+      this.allLabels=response.data.details;
+      console.log('getLabel', response)
+      console.log('allLabels',this.allLabels);
+      
+    },(error)=>{
+      this.snackBar.open("Error in getLabel",error,{
+        duration:3000
+      })
+    })
   }
 }

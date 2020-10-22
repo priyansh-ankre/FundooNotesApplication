@@ -16,7 +16,7 @@ export class LabelComponent implements OnInit {
 
   constructor(
     public dialogRef:MatDialogRef<LabelComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:LabelComponent,
+    @Inject(MAT_DIALOG_DATA) public data:any,
     private noteService:NoteService,
     private snackBar:MatSnackBar
   ) { }
