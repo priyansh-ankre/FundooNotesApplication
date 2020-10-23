@@ -24,18 +24,20 @@ export class CreateNoteComponent implements OnInit {
 
   @Output() getNotes: EventEmitter<any> = new EventEmitter();
 
-  allLabels:any;
-  labelClick=false;
-  chipLabel=false;
+  allLabels: any;
+  labelClick = false;
+  chipLabel = false;
+  selectedItem: string[];
 
   constructor(
     private service: NoteService,
-    private snackBar:MatSnackBar
+    private snackBar: MatSnackBar
   ) {
 
   }
 
   ngOnInit(): void {
+    this.selectedItem=new Array<string>();
   }
 
   clickBox() {
@@ -70,21 +72,32 @@ export class CreateNoteComponent implements OnInit {
 
   colorsClick($event) {
     this.color = $event;
-    console.log('color',this.color);
-    console.log('noteList',this.noteList);
+    console.log('color', this.color);
+    console.log('noteList', this.noteList);
   }
 
-  getLabel(){
+  getLabel() {
     this.service.getLabel()
-    .subscribe((response)=>{
-      this.allLabels=response.data.details;
-      console.log('getLabel', response)
-      console.log('allLabels',this.allLabels);
-      
-    },(error)=>{
-      this.snackBar.open("Error in getLabel",error,{
-        duration:3000
+      .subscribe((response) => {
+        this.allLabels = response.data.details;
+        console.log('getLabel', response)
+        console.log('allLabels', this.allLabels);
+
+      }, (error) => {
+        this.snackBar.open("Error in getLabel", error, {
+          duration: 3000
+        })
       })
-    })
+  }
+
+  getCheckLabel(e, lbl) {
+    if (e.target.checked) {
+      this.selectedItem.push(lbl);
+    }
+    else {
+      this.selectedItem = this.selectedItem.filter(m=>m!=lbl)
+    }
+    console.log(this.selectedItem);
+    
   }
 }

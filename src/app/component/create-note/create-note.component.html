@@ -13,30 +13,34 @@
         <form class="example-form" *ngIf="switchBox==true" [ngStyle]="{'background-color': color}">
             <input type="text" placeholder="Title" class="tan" style="font-size: 1rem;" [formControl]="title">
             <input type="text" placeholder="Take a note..." class="tan" [formControl]="description">
+            <mat-chip-list *ngFor="let chips of selectedItem">
+                <mat-chip>{{chips}}</mat-chip>
+            </mat-chip-list>
             <div class="icon-button">
                 <div class="icon-box">
                     <app-reminders-icon></app-reminders-icon>
                     <app-archive-icon (click)="archiveClick()"></app-archive-icon>
                     <app-color-pallete (colorPalleteEvent)="colorsClick($event)"></app-color-pallete>
-                    <button mat-button class="label-button" (click)="labelClick=!labelClick">
-                        <mat-icon class="more">more_vertical</mat-icon>
-                        <mat-card class="label-card" *ngIf="labelClick"
-                            (click)="getLabel();chipLabel=!chipLabel;labelClick=!labelClick">
-                            Add label
-                            <div *ngIf="chipLabel" style="padding-left: 58px;">
-                                <mat-card class="chip-list">
-                                    <mat-card-header>Label note</mat-card-header>
-                                    <ol *ngFor="let chip of allLabels">
-                                        <mat-checkbox class="chip-set">
-                                            {{chip.label}}
-                                        </mat-checkbox>
-                                    </ol>
-                                </mat-card>
-                            </div>
-                        </mat-card>
-
-                    </button>
+                    <div>
+                        <button mat-button class="label-button" (click)="labelClick=!labelClick">
+                            <mat-icon class="more">more_vertical</mat-icon>
+                        </button>
+                        <div>
+                            <mat-card class="label-card" *ngIf="labelClick" (click)="getLabel();chipLabel=!chipLabel">
+                                Add label
+                            </mat-card>
+                            <mat-card *ngIf="chipLabel" class="chip-list">
+                                <div>
+                                    <b>Label note</b>
+                                </div>
+                                <ol *ngFor="let chip of allLabels">
+                                    <input type="checkbox" name="{{chip.label}}" [value]="chip.label" (change)="getCheckLabel($event,chip.label)">{{chip.label}}
+                                </ol>
+                            </mat-card>
+                        </div>
+                    </div>
                 </div>
+
                 <div>
                     <button mat-button (click)="clickBox_()" class="note-button">close</button>
                 </div>
