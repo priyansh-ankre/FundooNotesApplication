@@ -27,7 +27,8 @@ export class CreateNoteComponent implements OnInit {
   allLabels: any;
   labelClick = false;
   chipLabel = false;
-  selectedItem: string[];
+  selectedItem: any[];
+  labelId:any[];
 
   constructor(
     private service: NoteService,
@@ -37,7 +38,8 @@ export class CreateNoteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectedItem=new Array<string>();
+    this.selectedItem=new Array();
+    this.labelId=new Array();
   }
 
   clickBox() {
@@ -54,7 +56,8 @@ export class CreateNoteComponent implements OnInit {
       title: this.title.value,
       description: this.description.value,
       isArchived: this.isArchived.value,
-      color: this.color
+      color: this.color,
+      labelIdList:this.labelId
     }
     this.service.addNote(addNoteData)
       .subscribe((response) => {
@@ -80,9 +83,6 @@ export class CreateNoteComponent implements OnInit {
     this.service.getLabel()
       .subscribe((response) => {
         this.allLabels = response.data.details;
-        console.log('getLabel', response)
-        console.log('allLabels', this.allLabels);
-
       }, (error) => {
         this.snackBar.open("Error in getLabel", error, {
           duration: 3000
@@ -97,7 +97,11 @@ export class CreateNoteComponent implements OnInit {
     else {
       this.selectedItem = this.selectedItem.filter(m=>m!=lbl)
     }
-    console.log(this.selectedItem);
-    
+  }
+  
+  getLabelId(labels){
+    // let myJSON = JSON.stringify(labels.id);
+    this.labelId.push(labels.id);
+    console.log('Labelid',this.labelId);
   }
 }
