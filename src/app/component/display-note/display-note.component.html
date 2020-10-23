@@ -10,8 +10,8 @@
                 <mat-card-content (click)="openDialog(item)">
                     {{item.description}}
                 </mat-card-content>
-                <mat-chip-list *ngFor="let chip of item.noteLabels">
-                    <mat-chip>{{chip.label}}</mat-chip>
+                <mat-chip-list>
+                    <mat-chip *ngFor="let chip of item.noteLabels">{{chip.label}}</mat-chip>
                 </mat-chip-list>
                 <div class="note-icon">
                     <div>
