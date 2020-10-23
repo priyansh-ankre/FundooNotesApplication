@@ -13,8 +13,8 @@
         <form class="example-form" *ngIf="switchBox==true" [ngStyle]="{'background-color': color}">
             <input type="text" placeholder="Title" class="tan" style="font-size: 1rem;" [formControl]="title">
             <input type="text" placeholder="Take a note..." class="tan" [formControl]="description">
-            <mat-chip-list *ngFor="let chips of selectedItem">
-                <mat-chip>{{chips}}</mat-chip>
+            <mat-chip-list>
+                <mat-chip *ngFor="let chips of selectedItem">{{chips}}</mat-chip>
             </mat-chip-list>
             <div class="icon-button">
                 <div class="icon-box">
